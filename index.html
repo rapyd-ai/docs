@@ -1,0 +1,1943 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-311ce611.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-92ff4029.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-e9bde216.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;javascript&quot;,&quot;python&quot;,&quot;r&quot;,&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-a7e4f4e7.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">JavaScript</a>
+              <a href="#" data-language-name="python">Python</a>
+              <a href="#" data-language-name="r">R</a>
+              <a href="#" data-language-name="shell">cURL</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#credits" class="toc-h2 toc-link" data-title="Credits">Credits</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#natural-language" class="toc-h1 toc-link" data-title="Natural Language">Natural Language</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#sentiment-analysis" class="toc-h2 toc-link" data-title="Sentiment Analysis">Sentiment Analysis</a>
+                  </li>
+                  <li>
+                    <a href="#detect-entities" class="toc-h2 toc-link" data-title="Detect Entities">Detect Entities</a>
+                  </li>
+                  <li>
+                    <a href="#detect-key-phrases" class="toc-h2 toc-link" data-title="Detect Key Phrases">Detect Key Phrases</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#computer-vision" class="toc-h1 toc-link" data-title="Computer Vision">Computer Vision</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#face-detection" class="toc-h2 toc-link" data-title="Face Detection">Face Detection</a>
+                  </li>
+                  <li>
+                    <a href="#landmark-detection" class="toc-h2 toc-link" data-title="Landmark Detection">Landmark Detection</a>
+                  </li>
+                  <li>
+                    <a href="#object-localization" class="toc-h2 toc-link" data-title="Object Localization">Object Localization</a>
+                  </li>
+                  <li>
+                    <a href="#text-detection" class="toc-h2 toc-link" data-title="Text Detection">Text Detection</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://www.rapyd.ai/app/sign-up/'>Sign Up for RAPYD.AI</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<blockquote>
+<p><strong> GETTING STARTED? </strong><br />
+Check out our <a href="https://www.rapyd.ai/help-center/quickstart-guide"> quickstart guide</a>.</p>
+
+<p><strong> NOT A DEVELOPER? </strong> <br /> 
+Sign in to your <a href="https://www.rapyd.ai/app/start">RAPYD.AI dashboard</a> to get started with apps. </p>
+
+<p>Base URL:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight markdown tab-markdown"><code>https://api.rapyd.ai
+</code></pre></div>
+<p>RAPYD.AI is an API for AI services. Some people call it AI-as-a-Service. Some call it AI platform. We don&#39;t mind how you call it, but here&#39;s what RAPYD.AI does in plain English:</p>
+
+<aside class="notice">
+<strong>RAPYD.AI gives you a simple API interface to access state-of-the-art AI services from leading providers.</strong>
+</aside>
+
+<p>Let&#39;s break this statement down:</p>
+
+<p><strong>A simple API interface</strong>
+The RAPYD.AI API is organized around REST. Our API accepts form-encoded request bodies, returns JSON-encoded responses, and uses standard HTTP response codes, authentication, and verbs. You can send texts, images, videos or audio files as inputs. You can even use our API to train and deploy custom models (Pro Plan).</p>
+
+<p><strong>State-of-the-art AI services</strong>
+We ensure that the AI services that we provide belong the best of their class. You should focus on your use-case and your AI application and not whether another AI service might do a better job. It might be that another AI achieves better results, especially in very specific or niche settings. But generally speaking, the AI services that we provide here will give you a good baseline to start with.</p>
+
+<p><strong>Leading providers</strong>
+All AI services on RAPYD.AI are production ready. We don&#39;t want you to build your prototype using some AI service that does not scale. When you decide to go into production, you can rely that the service provider in the backend can handle your AI production workloads.</p>
+<h1 id='authentication'>Authentication</h1>
+<p>The RAPYD.AI API uses a combination of your unique, permanent account ID and a temporary access token to authenticate requests. </p>
+
+<p>You will get an Account ID when you <a href="https://www.rapyd.ai/app/sign-up/", target = "_blank"> sign up here</a>. We will find your Account-ID in your welcome e-mail as well as in your <a href="https://www.rapyd.ai/app/start/", target = "_blank"> RAPYD.AI Dashboard.</a></p>
+
+<p>You can generate a token as often as you like either through your <a href="https://www.rapyd.ai/app/start/", target = "_blank"> RAPYD.AI Dashboard</a> or programmatically using the following API end point:</p>
+
+<p><code>POST /v1/user/token</code></p>
+
+<p>A token is valid for 60 minutes.</p>
+
+<blockquote>
+<p>To get a token, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.rapyd.ai/v1/user/token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: text/plain'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "email":"your-email",
+    "password":"your-password"
+}
+'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text/plain</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">raw</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">{</span><span class="se">\n</span><span class="s2">  </span><span class="se">\"</span><span class="s2">email</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">your-email</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2"> </span><span class="se">\"</span><span class="s2">password</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">your-password</span><span class="se">\"\n</span><span class="s2">}</span><span class="se">\n</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">raw</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.rapyd.ai/v1/user/token</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.rapyd.ai/v1/user/token"</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\n\t\"</span><span class="s">email</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">your-email</span><span class="se">\"</span><span class="s">,</span><span class="se">\n\t\"</span><span class="s">password</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">your-password</span><span class="se">\"\n</span><span class="s">}</span><span class="se">\n</span><span class="s">"</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'text/plain'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">payload</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">))</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="n">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span><span class="w">
+
+</span><span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"https://api.rapyd.ai/v1/user/token"</span><span class="w">
+</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"your-email"</span><span class="p">,</span><span class="w"> 
+           </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"your-password"</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Get results</span><span class="w">
+</span><span class="n">response</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">POST</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payload</span><span class="p">,</span><span class="w"> </span><span class="n">encode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"json"</span><span class="p">)</span><span class="w">
+</span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">content</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="s2">"parsed"</span><span class="p">)</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>your-email</code> and <code>your-password</code>with your password.</p>
+
+<p><strong>Never store your password inside your code! </strong> If you are not sure how to manage your passwords safely, use our dashboard to generate a token.</p>
+</blockquote>
+
+<p>Authentication to the API is performed via Bearer Token Usage. </p>
+
+<p>RAPYD.AI expects the Account ID and the Token to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>&#39;ACCOUNT-ID: your-accountid&#39;</code>
+<code>&#39;Authorization: Bearer your-token&#39;</code></p>
+
+<aside class="notice">
+You must replace <code>your-token</code> and <code>your-accountid</code> with your personal API credentials.
+</aside>
+
+<p>Never provide your RAPYD.AI login password via the API except for the endpoint <code>/v1/user/token</code> . </p>
+
+<p>All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests without authentication will also fail.</p>
+<h2 id='credits'>Credits</h2>
+<p>Every successful API request will deduct 1 credit from your RAPYD.AI credit balance.</p>
+
+<p>A successful API request is defined as every request that yields a successful result object.</p>
+
+<p>Errors, rejects or timeouts will not affect your credits balance. </p>
+<h1 id='natural-language'>Natural Language</h1>
+<p>Natural Language Processing (NLP) services helps you to process, analyze and get insights from text data.</p>
+<h2 id='sentiment-analysis'>Sentiment Analysis</h2>
+<p>Sentiment analysis is used to classify the polarity of a given text to find out whether the expressed opinion in this text is positive, negative, or neutral. </p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST /v1/nlp/sentiment</code></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.rapyd.ai/v1/nlp/sentiment'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'ACCOUNT-ID: your-accountid'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Bearer your-token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: text/plain'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "text": "I don'</span><span class="se">\'</span><span class="s1">'t like old cabin cruisers.",
+    "provider":"AWS",
+    "language": "Auto"
+}'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">ACCOUNT-ID</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">your-accountid</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bearer your-token</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text/plain</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">raw</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">{</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">text</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">I don't like old cabin cruisers.</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">provider</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">AWS</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">language</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Auto</span><span class="se">\"\n</span><span class="s2">}</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">raw</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://api.rapyd.ai/v1/nlp/sentiment</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.rapyd.ai/v1/nlp/sentiment"</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">text</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">I don't like old cabin cruisers.</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">provider</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">AWS</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">language</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">Auto</span><span class="se">\"\n</span><span class="s">}"</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'ACCOUNT-ID'</span><span class="p">:</span> <span class="s">'your-accountid'</span><span class="p">,</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer your-token'</span><span class="p">,</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'text/plain'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">payload</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">))</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span><span class="w">
+
+</span><span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"https://api.rapyd.ai/v1/nlp/sentiment"</span><span class="w">
+
+
+</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"I don't like old cabin cruisers."</span><span class="p">,</span><span class="w"> 
+           </span><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"aws"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">headers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">ACCOUNTID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"your-accountid"</span><span class="p">,</span><span class="w"> 
+             </span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Bearer your-token"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">response</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">POST</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">add_headers</span><span class="p">(</span><span class="n">headers</span><span class="p">),</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payload</span><span class="p">,</span><span class="w"> </span><span class="n">encode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"json"</span><span class="p">)</span><span class="w">
+</span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">content</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="s2">"parsed"</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>your-accountid</code> and <code>your-token</code> with your personal credentials.</p>
+
+<p>The above command returns results in JSON representation. The content depends on the chosen provider.</p>
+
+<p>Example response when provider is <code>aws</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AWS"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"sentiment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NEGATIVE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"sentimentScore"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"positive"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.035679124</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"negative"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6906262</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"neutral"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.27357435</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"mixed"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2039347E-4</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response when provider is <code>gcp</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GCP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.8</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response when provider is <code>azure</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AZURE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"English"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"sentiment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"neutral"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"confidenceScores"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"neutral"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.52</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"positive"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.03</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"negative"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.45</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"sentences"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I don't like old cabin cruisers."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"confidenceScores"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"neutral"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.52</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"positive"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.03</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"negative"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.45</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"sentiment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"neutral"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"warnings"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='request-parameters'>Request Parameters</h3>
+<p>The request body contains data in JSON representation: </p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Text</td>
+<td>None</td>
+<td>The text which you want to analyse. Maximum is xxxx characters.</td>
+</tr>
+<tr>
+<td>Provider</td>
+<td><code>auto</code></td>
+<td>The AI service provider you want to use. The AI Service provider can be any of the following: <ul><li><code>aws</code> (Amazon Comprehend)</li><li><code>azure</code> (Microsoft Azure Cognitive Services)</li><li><code>gcp</code> (Google Cloud NLP API).</li><li><code>auto</code> (let RAPYD.AI choose service provider automatically.)</li></ul></td>
+</tr>
+<tr>
+<td>Language</td>
+<td><code>auto</code></td>
+<td>The language of the text in the request body. Can be any of the following: <ul><li><code>de</code> (German) </li><li><code>en</code> (English) </li><li><code>es</code> (Spanish) </li><li><code>it</code> (Italian) </li><li><code>pt</code> (Portuguese) </li><li><code>fr</code> (French) </li><li><code>ja</code> (Japanese) </li><li><code>ko</code> (Korean) </li><li><code>hi</code> (Hindi) </li><li><code>ar</code> (Arabic) </li><li><code>zh</code> (Chinese simplified) </li><li><code>zh-TW</code> (Chinese traditional) </li><li><code>auto</code> (Auto-detect language) </li></ul></td>
+</tr>
+</tbody></table>
+<h2 id='detect-entities'>Detect Entities</h2>
+<p>Detects entities in a given text. An entity is a reference to a real-world object such as people, places, commercial items, and to measures such as dates and quantities.</p>
+
+<p>Each entity comes with a score that indicates the level of confidence for the detected entity type.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST /v1/nlp/entities</code></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.rapyd.ai/v1/nlp/entities'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'ACCOUNT-ID: your-accountid'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Bearer your-token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: text/plain'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "text": "Next summer I want to visit Barcelona and Lion.",
+    "provider":"aws"
+}'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">ACCOUNT-ID</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">your-accountid</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bearer your-token</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text/plain</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">raw</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">{</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">text</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Next summer I want to visit Barcelona and Lion.</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">provider</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">aws</span><span class="se">\"\n</span><span class="s2">}</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">raw</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.rapyd.ai/v1/nlp/entities</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.rapyd.ai/v1/nlp/entities"</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">text</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">Next summer I want to visit Barcelona and Lion.</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">provider</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">aws</span><span class="se">\"\n</span><span class="s">}"</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'ACCOUNT-ID'</span><span class="p">:</span> <span class="s">'your-accountid'</span><span class="p">,</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer your-token'</span><span class="p">,</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'text/plain'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">payload</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">))</span>
+
+
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span><span class="w">
+
+</span><span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"https://api.rapyd.ai/v1/nlp/entities"</span><span class="w">
+
+
+</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Next summer I want to visit Barcelona and Lion."</span><span class="p">,</span><span class="w"> 
+           </span><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"aws"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">headers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">ACCOUNTID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"your-accountid"</span><span class="p">,</span><span class="w"> 
+             </span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Bearer your-token"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">response</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">POST</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">add_headers</span><span class="p">(</span><span class="n">headers</span><span class="p">),</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payload</span><span class="p">,</span><span class="w"> </span><span class="n">encode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"json"</span><span class="p">)</span><span class="w">
+</span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">content</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="s2">"parsed"</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>your-accountid</code> and <code>your-token</code> with your personal credentials.</p>
+
+<p>The above command returns results in JSON representation. The content depends on the chosen provider.</p>
+
+<p>Example response when provider is <code>aws</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aws"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"entities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9543518</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DATE"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Next summer"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"beginOffset"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"endOffset"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.99991035</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOCATION"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Barcelona"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"beginOffset"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"endOffset"</span><span class="p">:</span><span class="w"> </span><span class="mi">37</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.99886346</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOCATION"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lion"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"beginOffset"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"endOffset"</span><span class="p">:</span><span class="w"> </span><span class="mi">46</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response when provider is <code>gcp</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GCP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Barcelona"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"salience"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6229014992713928</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOCATION"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lion"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"salience"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3770985007286072</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORGANIZATION"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response when provider is <code>azure</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AZURE"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"English"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Next summer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DateTime"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subcategory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DateRange"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"confidenceScore"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Barcelona"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Location"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subcategory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GPE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"confidenceScore"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.41</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lion"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Location"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subcategory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GPE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"confidenceScore"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.36</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='request-parameters-2'>Request Parameters</h3>
+<p>The request body contains data in JSON representation. </p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Text</td>
+<td>None</td>
+<td>The text which you want to analyse. Maximum is xxxx characters.</td>
+</tr>
+<tr>
+<td>Provider</td>
+<td><code>auto</code></td>
+<td>The AI service provider you want to use. The AI Service provider can be any of the following: <ul><li><code>aws</code> (Amazon Comprehend)</li><li><code>azure</code> (Microsoft Azure Cognitive Services)</li><li><code>gcp</code> (Google Cloud NLP API).</li><li><code>auto</code> (let RAPYD.AI choose service provider automatically.)</li></ul></td>
+</tr>
+<tr>
+<td>Language</td>
+<td><code>auto</code></td>
+<td>The language of the text in the request body. Can be any of the following: <ul><li><code>de</code> (German) </li><li><code>en</code> (English) </li><li><code>es</code> (Spanish) </li><li><code>it</code> (Italian) </li><li><code>pt</code> (Portuguese) </li><li><code>fr</code> (French) </li><li><code>ja</code> (Japanese) </li><li><code>ko</code> (Korean) </li><li><code>hi</code> (Hindi) </li><li><code>ar</code> (Arabic) </li><li><code>zh</code> (Chinese simplified) </li><li><code>zh-TW</code> (Chinese traditional) </li><li><code>auto</code> (Auto-detect language) </li></ul></td>
+</tr>
+</tbody></table>
+<h2 id='detect-key-phrases'>Detect Key Phrases</h2>
+<p>Detects the key noun phrases used in text.</p>
+
+<p>Each key phrase comes with a score that indicates the level of confidence for the detected noun phrase.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST /v1/nlp/keyphrase</code></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.rapyd.ai/v1/nlp/keyphrase'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'ACCOUNT-ID: your-accountid'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Bearer your-token'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Content-Type: text/plain'</span> <span class="se">\</span>
+<span class="nt">--data-raw</span> <span class="s1">'{
+    "text": "Seems it never rains in Southern California.",
+    "provider":"aws",
+    "language": "auto"
+}'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">ACCOUNT-ID</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">your-accountid</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bearer your-token</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">text/plain</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">raw</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">{</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">text</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">Seems it never rains in Southern California.</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">provider</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">aws</span><span class="se">\"</span><span class="s2">,</span><span class="se">\n</span><span class="s2">    </span><span class="se">\"</span><span class="s2">language</span><span class="se">\"</span><span class="s2">: </span><span class="se">\"</span><span class="s2">auto</span><span class="se">\"\n</span><span class="s2">}</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">raw</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.rapyd.ai/v1/nlp/keyphrase</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.rapyd.ai/v1/nlp/keyphrase"</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">text</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">Seems it never rains in Southern California.</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">provider</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">aws</span><span class="se">\"</span><span class="s">,</span><span class="se">\n</span><span class="s">    </span><span class="se">\"</span><span class="s">language</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">auto</span><span class="se">\"\n</span><span class="s">}"</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'ACCOUNT-ID'</span><span class="p">:</span> <span class="s">'your-accountid'</span><span class="p">,</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer your-token'</span><span class="p">,</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'text/plain'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">payload</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">))</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span><span class="w">
+
+</span><span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"https://api.rapyd.ai/v1/nlp/keyphrase"</span><span class="w">
+
+
+</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Seems it never rains in Southern California."</span><span class="p">,</span><span class="w"> 
+           </span><span class="n">provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"aws"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">headers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">ACCOUNTID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"your-accountid"</span><span class="p">,</span><span class="w"> 
+             </span><span class="n">Authorization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Bearer your-token"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">response</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">POST</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">add_headers</span><span class="p">(</span><span class="n">headers</span><span class="p">),</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payload</span><span class="p">,</span><span class="w"> </span><span class="n">encode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"json"</span><span class="p">)</span><span class="w">
+</span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">content</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="s2">"parsed"</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>your-accountid</code> and <code>your-token</code> with your personal credentials.</p>
+
+<p>The above command returns results in JSON representation. The content depends on the chosen provider.</p>
+
+<p>Example response when provider is <code>aws</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aws"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"keyPhrases"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9999997</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Southern California"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"beginOffset"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"endOffset"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response when provider is <code>azure</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"azure"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"English"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Southern California"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='request-parameters-3'>Request Parameters</h3>
+<p>The request body contains data in JSON representation. </p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Text</td>
+<td>None</td>
+<td>The text which you want to analyse. Maximum is xxxx characters.</td>
+</tr>
+<tr>
+<td>Provider</td>
+<td><code>auto</code></td>
+<td>The AI service provider you want to use. The AI Service provider can be any of the following: <ul><li><code>aws</code> (Amazon Comprehend)</li><li><code>azure</code> (Microsoft Azure Cognitive Services)</li><li><code>auto</code> (let RAPYD.AI choose service provider automatically.)</li></ul></td>
+</tr>
+<tr>
+<td>Language</td>
+<td><code>auto</code></td>
+<td>The language of the text in the request body. Can be any of the following: <ul><li><code>de</code> (German) </li><li><code>en</code> (English) </li><li><code>es</code> (Spanish) </li><li><code>it</code> (Italian) </li><li><code>pt</code> (Portuguese) </li><li><code>fr</code> (French) </li><li><code>ja</code> (Japanese) </li><li><code>ko</code> (Korean) </li><li><code>hi</code> (Hindi) </li><li><code>ar</code> (Arabic) </li><li><code>zh</code> (Chinese simplified) </li><li><code>zh-TW</code> (Chinese traditional) </li><li><code>auto</code> (Auto-detect language) </li></ul></td>
+</tr>
+</tbody></table>
+<h1 id='computer-vision'>Computer Vision</h1>
+<p>Computer Vision enables machines to &quot;see&quot; images and recognize objects, entities and texts or extract meta information from a given image.</p>
+
+<p>Currently, the Computer Vision AI services are only available through the provider Google Cloud Platform (<code>gcp</code>). More providers will follow soon.</p>
+<h2 id='face-detection'>Face Detection</h2>
+<p>Face detection identifies faces on images and analyses various characteristics such as the face expression or facial features like eyes, nose or mouth positions.</p>
+
+<p>Each face detection carries a confidence score for recognizing the face itself as well as the features of the face. </p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST /v1/vision/face</code></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.rapyd.ai/v1/vision/face'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'PROVIDER: gcp'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'ACCOUNT-ID: your-accountid'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Bearer your-token'</span> <span class="se">\</span>
+<span class="nt">--form</span> <span class="s1">'file=face_demo.png'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">PROVIDER</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">gcp</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">ACCOUNT-ID</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">your-accountid</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bearer your-token</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">formdata</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+<span class="nx">formdata</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">file</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="dl">"</span><span class="s2">face_demo.png</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">formdata</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.rapyd.ai/v1/vision/face</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.rapyd.ai/v1/vision/face"</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">(</span><span class="s">'file'</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">'face_demo.png'</span><span class="p">,</span><span class="s">'rb'</span><span class="p">))</span>
+<span class="p">]</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'PROVIDER'</span><span class="p">:</span> <span class="s">'gcp'</span><span class="p">,</span>
+  <span class="s">'ACCOUNT-ID'</span><span class="p">:</span> <span class="s">'your-accountid'</span><span class="p">,</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer your-token'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">payload</span><span class="p">,</span> <span class="n">files</span> <span class="o">=</span> <span class="n">files</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">))</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span><span class="w">
+
+</span><span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"https://api.rapyd.ai/v1/vision/face"</span><span class="w">
+
+</span><span class="n">headers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"ACCOUNT-ID"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"your-accountid"</span><span class="p">,</span><span class="w"> 
+             </span><span class="s2">"Authorization"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Bearer your-token"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"PROVIDER"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"GCP"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">upload_file</span><span class="p">(</span><span class="s2">"face_demo.png"</span><span class="p">))</span><span class="w">
+
+</span><span class="n">response</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">POST</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">add_headers</span><span class="p">(</span><span class="n">headers</span><span class="p">),</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payload</span><span class="p">)</span><span class="w">
+</span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">content</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="s2">"parsed"</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>your-accountid</code> and <code>your-token</code> with your personal credentials.</p>
+
+<p>The above command returns results in JSON representation.</p>
+
+<p>Example response when provider is <code>gcp</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GCP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"rollAngle"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.4798591</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"panAngle"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.12718968</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tiltAngle"</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.2569677</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectionConfidence"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.94939417</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"landmarkingConfidence"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.80378807</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"joyRating"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sorrowRating"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"angerRating"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"surpriseRating"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"underExposedRating"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"blurredRating"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"headwearRating"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"joy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VERY_LIKELY"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sorrow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VERY_UNLIKELY"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"anger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VERY_UNLIKELY"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"surprise"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VERY_UNLIKELY"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"underExposed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VERY_UNLIKELY"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"blurred"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VERY_UNLIKELY"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"headwear"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VERY_UNLIKELY"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">549</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">1164</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">1164</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">740</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">549</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">740</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"fdBoundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">587</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">153</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">1124</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">153</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">1124</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">686</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">587</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">686</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"landmarks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LEFT_EYE"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">768.32544</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">373.06293</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0013751984</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RIGHT_EYE"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">951.94446</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">369.37823</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4714136</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LEFT_OF_LEFT_EYEBROW"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">701.52814</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">339.7583</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">14.543475</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RIGHT_OF_LEFT_EYEBROW"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">814.4408</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">331.55685</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-34.32722</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LEFT_OF_RIGHT_EYEBROW"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">903.94037</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">327.39395</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-33.947388</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RIGHT_OF_RIGHT_EYEBROW"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">1017.8008</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">336.4593</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.296562</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MIDPOINT_BETWEEN_EYES"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">859.9506</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">364.55762</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-36.450184</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOSE_TIP"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">856.7595</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">477.4241</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-88.43703</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UPPER_LIP"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">858.8607</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">536.78925</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-47.308403</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOWER_LIP"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">860.94543</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">612.84033</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-34.59475</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOUTH_LEFT"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">763.8856</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">559.6046</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.3785026</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOUTH_RIGHT"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">955.97986</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">554.21515</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.0310767</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOUTH_CENTER"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">862.51575</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">575.4721</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-34.262444</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOSE_BOTTOM_RIGHT"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">920.23486</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">484.30716</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-22.016401</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOSE_BOTTOM_LEFT"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">797.2778</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">486.82227</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-22.553627</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOSE_BOTTOM_CENTER"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">858.078</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">504.10403</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-48.339252</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LEFT_EYE_TOP_BOUNDARY"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">766.4023</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">358.04807</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-10.352289</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LEFT_EYE_RIGHT_CORNER"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">803.16595</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">374.9589</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.06131935</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LEFT_EYE_BOTTOM_BOUNDARY"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">766.3668</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">387.02142</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.8237071</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LEFT_EYE_LEFT_CORNER"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">728.4919</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">377.98483</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.790957</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RIGHT_EYE_TOP_BOUNDARY"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">953.81085</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">352.64587</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9.6653805</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RIGHT_EYE_RIGHT_CORNER"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">991.34924</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">374.1126</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">16.405922</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RIGHT_EYE_BOTTOM_BOUNDARY"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">953.1808</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">383.13376</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.3505049</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RIGHT_EYE_LEFT_CORNER"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">913.28955</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">371.66306</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2713766</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LEFT_EYEBROW_UPPER_MIDPOINT"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">759.5528</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">317.5705</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-20.760433</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RIGHT_EYEBROW_UPPER_MIDPOINT"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">961.46344</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">313.44608</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-19.984333</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LEFT_EAR_TRAGION"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">643.31226</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">435.80838</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">221.14575</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RIGHT_EAR_TRAGION"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">1066.6526</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">425.88293</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">223.30026</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FOREHEAD_GLABELLA"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">860.34784</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">325.64413</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-40.136284</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHIN_GNATHION"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">861.9055</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">709.1296</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9.581303</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHIN_LEFT_GONION"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">688.78577</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">595.2242</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">148.22136</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHIN_RIGHT_GONION"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">1029.5104</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">582.9388</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">149.34828</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNKNOWN_LANDMARK"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">726.73364</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">497.08798</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.647654</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNKNOWN_LANDMARK"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">994.6479</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">492.37317</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"z"</span><span class="p">:</span><span class="w"> </span><span class="mf">18.335396</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='file-properties'>File Properties</h3>
+<p>The request sends a file over HTTPS. </p>
+
+<table><thead>
+<tr>
+<th>File Properties</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Image File Size</td>
+<td>Maximum file size is 7 MB</td>
+</tr>
+<tr>
+<td>File Format</td>
+<td>The following image types are supported:<ul><li>JPEG</li><li>PNG8</li><li>PNG24</li><li>GIF</li><li>Animated GIF (first frame only)</li><li>BMP</li><li>WEBP</li><li>RAW</li><li>ICO</li><li>PDF</li><li>TIFF</li></ul></td>
+</tr>
+<tr>
+<td>Image Dimensions</td>
+<td>The recommended image size is 1600 x 1200 pixels (ca. 1.9M pixels). The larger the faces on the image the better. The distance between eyes is most important.</td>
+</tr>
+</tbody></table>
+
+<p>The response object contains many information. Please see the following links for more details:</p>
+
+<p><a href = "https://cloud.google.com/vision/docs/reference/rpc/google.cloud.vision.v1#faceannotation", target = "_blank">Face detection results from GCP</a></p>
+<h2 id='landmark-detection'>Landmark Detection</h2>
+<p>Landmark detection detects public places, tourist attractions or well-known landmarks in an image. It provides the label, the geo-coordinates, the position, and the confidence score of the detected landmark.</p>
+
+<p>Object information is returned in English only.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST /v1/vision/landmark</code></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.rapyd.ai/v1/vision/landmark'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'PROVIDER: gcp'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'ACCOUNT-ID: your-accountid'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Bearer your-token'</span> <span class="se">\</span>
+<span class="nt">--form</span> <span class="s1">'file=landmark_demo.png'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">PROVIDER</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">gcp</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">ACCOUNT-ID</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">your-accountid</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bearer your-token</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">formdata</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+<span class="nx">formdata</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">file</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="dl">"</span><span class="s2">landmark_demo.png</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">formdata</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.rapyd.ai/v1/vision/landmark</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.rapyd.ai/v1/vision/landmark"</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">(</span><span class="s">'file'</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">'landmark_demo.png'</span><span class="p">,</span><span class="s">'rb'</span><span class="p">))</span>
+<span class="p">]</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'PROVIDER'</span><span class="p">:</span> <span class="s">'gcp'</span><span class="p">,</span>
+  <span class="s">'ACCOUNT-ID'</span><span class="p">:</span> <span class="s">'your-accountid'</span><span class="p">,</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer your-token'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">payload</span><span class="p">,</span> <span class="n">files</span> <span class="o">=</span> <span class="n">files</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">))</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span><span class="w">
+
+</span><span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"https://api.rapyd.ai/v1/vision/landmark"</span><span class="w">
+
+</span><span class="n">headers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"ACCOUNT-ID"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"your-accountid"</span><span class="p">,</span><span class="w"> 
+             </span><span class="s2">"Authorization"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Bearer your-token"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"PROVIDER"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"GCP"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">upload_file</span><span class="p">(</span><span class="s2">"landmark_demo.png"</span><span class="p">))</span><span class="w">
+
+</span><span class="n">response</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">POST</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">add_headers</span><span class="p">(</span><span class="n">headers</span><span class="p">),</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payload</span><span class="p">)</span><span class="w">
+</span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">content</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="s2">"parsed"</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>your-accountid</code> and <code>your-token</code> with your personal credentials.</p>
+
+<p>The above command returns results in JSON representation.</p>
+
+<p>Example response when provider is <code>gcp</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GCP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Palace of Fine Arts"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.68384635</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">108</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">256</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">398</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">108</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">398</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"lng"</span><span class="p">:</span><span class="w"> </span><span class="mf">-122.447777</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">37.80290085993192</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='file-properties-2'>File Properties</h3>
+<p>The request sends a file over HTTPS. </p>
+
+<table><thead>
+<tr>
+<th>File Properties</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Image File Size</td>
+<td>Maximum file size is 7 MB</td>
+</tr>
+<tr>
+<td>File Format</td>
+<td>The following image types are supported:<ul><li>JPEG</li><li>PNG8</li><li>PNG24</li><li>GIF</li><li>Animated GIF (first frame only)</li><li>BMP</li><li>WEBP</li><li>RAW</li><li>ICO</li><li>PDF</li><li>TIFF</li></ul></td>
+</tr>
+<tr>
+<td>Image Dimensions</td>
+<td>The recommended image size is 640 x 480 pixels (ca. 300k pixels). Larger image sizes may not gain much in accuracy, while greatly increasing bandwidth usage and processing time.</td>
+</tr>
+</tbody></table>
+<h2 id='object-localization'>Object Localization</h2>
+<p>Object localization detects multiple objects in an image and provides the label, the position, and the confidence score of the detected object.</p>
+
+<p>Object information is returned in English only.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST /v1/vision/localize</code></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.rapyd.ai/v1/vision/localize'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'PROVIDER: gcp'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'ACCOUNT-ID: your-accountid'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Bearer your-token'</span> <span class="se">\</span>
+<span class="nt">--form</span> <span class="s1">'file=localize_demo.png'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">PROVIDER</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">gcp</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">ACCOUNT-ID</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">your-accountid</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bearer your-token</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">formdata</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+<span class="nx">formdata</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">file</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="dl">"</span><span class="s2">localize_demo.png</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">formdata</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.rapyd.ai/v1/vision/localize</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.rapyd.ai/v1/vision/localize"</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">(</span><span class="s">'file'</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">'localize_demo.png'</span><span class="p">,</span><span class="s">'rb'</span><span class="p">))</span>
+<span class="p">]</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'PROVIDER'</span><span class="p">:</span> <span class="s">'gcp'</span><span class="p">,</span>
+  <span class="s">'ACCOUNT-ID'</span><span class="p">:</span> <span class="s">'your-accountid'</span><span class="p">,</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer your-token'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">payload</span><span class="p">,</span> <span class="n">files</span> <span class="o">=</span> <span class="n">files</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">))</span>
+
+
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span><span class="w">
+
+</span><span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"https://api.rapyd.ai/v1/vision/localize"</span><span class="w">
+
+</span><span class="n">headers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"ACCOUNT-ID"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"your-accountid"</span><span class="p">,</span><span class="w"> 
+             </span><span class="s2">"Authorization"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Bearer your-token"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"PROVIDER"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"GCP"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">upload_file</span><span class="p">(</span><span class="s2">"localize_demo.png"</span><span class="p">))</span><span class="w">
+
+</span><span class="n">response</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">POST</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">add_headers</span><span class="p">(</span><span class="n">headers</span><span class="p">),</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payload</span><span class="p">)</span><span class="w">
+</span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">content</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="s2">"parsed"</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>your-accountid</code> and <code>your-token</code> with your personal credentials.</p>
+
+<p>The above command returns results in JSON representation.</p>
+
+<p>Example response when provider is <code>gcp</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre></div><h3 id='file-properties-3'>File Properties</h3>
+<p>The request sends a file over HTTPS. </p>
+
+<table><thead>
+<tr>
+<th>File Properties</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Image File Size</td>
+<td>Maximum file size is 7 MB</td>
+</tr>
+<tr>
+<td>File Format</td>
+<td>The following image types are supported:<ul><li>JPEG</li><li>PNG8</li><li>PNG24</li><li>GIF</li><li>Animated GIF (first frame only)</li><li>BMP</li><li>WEBP</li><li>RAW</li><li>ICO</li><li>PDF</li><li>TIFF</li></ul></td>
+</tr>
+<tr>
+<td>Image Dimensions</td>
+<td>The recommended image size is 640 x 480 pixels (ca. 300k pixels). Larger image sizes may not gain much in accuracy, while greatly increasing bandwidth usage and processing time.</td>
+</tr>
+</tbody></table>
+<h2 id='text-detection'>Text Detection</h2>
+<p>Text detection extracts text from an image using OCR (optical character recognition). </p>
+
+<p>Extracted text structures follow a strict hierarchy as follows (bottom to top level):
+* Symbol -&gt; Word -&gt; Paragraph -&gt; Block -&gt; Page  </p>
+
+<p>Each of these components have their own properties such as position and confidence score.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST /v1/vision/text</code></p>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>
+curl <span class="nt">--location</span> <span class="nt">--request</span> POST <span class="s1">'https://api.rapyd.ai/v1/vision/text'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'PROVIDER: gcp'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'ACCOUNT-ID: your-accountid'</span> <span class="se">\</span>
+<span class="nt">--header</span> <span class="s1">'Authorization: Bearer your-token'</span> <span class="se">\</span>
+<span class="nt">--form</span> <span class="s1">'file=text_demo.jpeg'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">PROVIDER</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">gcp</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">ACCOUNT-ID</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">your-accountid</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bearer your-token</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">formdata</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
+<span class="nx">formdata</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">file</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="dl">"</span><span class="s2">text_demo.jpeg</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">myHeaders</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">formdata</span><span class="p">,</span>
+  <span class="na">redirect</span><span class="p">:</span> <span class="dl">'</span><span class="s1">follow</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://api.rapyd.ai/v1/vision/localize</span><span class="dl">"</span><span class="p">,</span> <span class="nx">requestOptions</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">,</span> <span class="nx">error</span><span class="p">));</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.rapyd.ai/v1/vision/text"</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">(</span><span class="s">'file'</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">'text_demo.jpeg'</span><span class="p">,</span><span class="s">'rb'</span><span class="p">))</span>
+<span class="p">]</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'PROVIDER'</span><span class="p">:</span> <span class="s">'gcp'</span><span class="p">,</span>
+  <span class="s">'ACCOUNT-ID'</span><span class="p">:</span> <span class="s">'your-accountid'</span><span class="p">,</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer your-token'</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">payload</span><span class="p">,</span> <span class="n">files</span> <span class="o">=</span> <span class="n">files</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">))</span>
+
+
+</code></pre></div><div class="highlight"><pre class="highlight r tab-r"><code><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">httr</span><span class="p">)</span><span class="w">
+
+</span><span class="n">url</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s2">"https://api.rapyd.ai/v1/vision/text"</span><span class="w">
+
+</span><span class="n">headers</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"ACCOUNT-ID"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"your-accountid"</span><span class="p">,</span><span class="w"> 
+             </span><span class="s2">"Authorization"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Bearer your-token"</span><span class="p">,</span><span class="w">
+             </span><span class="s2">"PROVIDER"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"GCP"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">upload_file</span><span class="p">(</span><span class="s2">"text_demo.jpeg"</span><span class="p">))</span><span class="w">
+
+</span><span class="n">response</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">POST</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">add_headers</span><span class="p">(</span><span class="n">headers</span><span class="p">),</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payload</span><span class="p">)</span><span class="w">
+</span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">content</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="s2">"parsed"</span><span class="p">)</span><span class="w">
+
+</span></code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>your-accountid</code> and <code>your-token</code> with your personal credentials.</p>
+
+<p>The above command returns results in JSON representation.</p>
+
+<p>Example response when provider is <code>gcp</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GCP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SCHOOL</span><span class="se">\n</span><span class="s2">SPEED</span><span class="se">\n</span><span class="s2">LIMIT</span><span class="se">\n</span><span class="s2">25</span><span class="se">\n</span><span class="s2">WHEN</span><span class="se">\n</span><span class="s2">CHILDREN</span><span class="se">\n</span><span class="s2">ARE PRESENT</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">596</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">387</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">904</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">387</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">904</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">971</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">596</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">971</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SCHOOL"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">596</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">389</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">904</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">387</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">904</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">596</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">458</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SPEED"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">612</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">522</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">877</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">520</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">877</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">575</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">612</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">577</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIMIT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">634</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">604</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">849</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">604</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">849</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">659</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">634</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">659</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">608</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">684</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">867</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">684</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">867</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">827</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">608</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">827</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WHEN"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">685</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">870</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">784</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">870</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">784</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">897</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">685</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">897</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHILDREN"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">642</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">904</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">827</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">902</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">827</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">933</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">642</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">935</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">596</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">940</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">670</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">941</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">670</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">970</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">596</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">969</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRESENT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">699</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">940</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">871</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">941</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">871</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">971</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mi">699</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mi">970</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='file-properties-4'>File Properties</h3>
+<p>The request sends a file over HTTPS. </p>
+
+<table><thead>
+<tr>
+<th>File Properties</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Image File Size</td>
+<td>Maximum file size is 7 MB</td>
+</tr>
+<tr>
+<td>File Format</td>
+<td>The following image types are supported:<ul><li>JPEG</li><li>PNG8</li><li>PNG24</li><li>GIF</li><li>Animated GIF (first frame only)</li><li>BMP</li><li>WEBP</li><li>RAW</li><li>ICO</li><li>PDF</li><li>TIFF</li></ul></td>
+</tr>
+<tr>
+<td>Image Dimensions</td>
+<td>The recommended image size is 1024 x 768 pixels (ca. 786k pixels). The total image size must not exceed 75M pixels (length x width).</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>The RAPYD.AI API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The item requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified item could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access an item with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The endpoint requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many services! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">JavaScript</a>
+                <a href="#" data-language-name="python">Python</a>
+                <a href="#" data-language-name="r">R</a>
+                <a href="#" data-language-name="shell">cURL</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
