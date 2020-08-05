@@ -140,8 +140,7 @@ Authentication to the API is performed via Bearer Token Usage.
 
 RAPYD.AI expects the Account ID and the Token to be included in all API requests to the server in a header that looks like the following:
 
-`'ACCOUNT-ID: your-accountid'`
-`'Authorization: Bearer your-token'`
+`'ACCOUNT-ID: your-accountid'` <br /> `'Authorization: Bearer your-token'`
 
 <aside class="notice">
 You must replace <code>your-token</code> and <code>your-accountid</code> with your personal API credentials.

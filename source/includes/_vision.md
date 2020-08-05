@@ -20,7 +20,7 @@ curl --location --request POST 'https://api.rapyd.ai/v1/vision/face' \
 --header 'PROVIDER: gcp' \
 --header 'ACCOUNT-ID: your-accountid' \
 --header 'Authorization: Bearer your-token' \
---form 'file=face_demo.png'
+--form 'FILE=face_demo.png'
 
 ```
 
@@ -32,7 +32,7 @@ myHeaders.append("ACCOUNT-ID", "your-accountid");
 myHeaders.append("Authorization", "Bearer your-token");
 
 var formdata = new FormData();
-formdata.append("file", fileInput.files[0], "face_demo.png");
+formdata.append("FILE", fileInput.files[0], "face_demo.png");
 
 var requestOptions = {
   method: 'POST',
@@ -56,7 +56,7 @@ url = "https://api.rapyd.ai/v1/vision/face"
 
 payload = {}
 files = [
-  ('file', open('face_demo.png','rb'))
+  ('FILE', open('face_demo.png','rb'))
 ]
 headers = {
   'PROVIDER': 'gcp',
@@ -80,7 +80,7 @@ headers <- c("ACCOUNT-ID" = "your-accountid",
              "Authorization" = "Bearer your-token",
              "PROVIDER" = "GCP")
 
-payload <- list(file = upload_file("face_demo.png"))
+payload <- list(FILE = upload_file("face_demo.png"))
 
 response <- POST(url, add_headers(headers), body = payload)
 result <- content(response, "parsed")
@@ -397,7 +397,7 @@ curl --location --request POST 'https://api.rapyd.ai/v1/vision/landmark' \
 --header 'PROVIDER: gcp' \
 --header 'ACCOUNT-ID: your-accountid' \
 --header 'Authorization: Bearer your-token' \
---form 'file=landmark_demo.png'
+--form 'FILE=landmark_demo.png'
 
 ```
 
@@ -409,7 +409,7 @@ myHeaders.append("ACCOUNT-ID", "your-accountid");
 myHeaders.append("Authorization", "Bearer your-token");
 
 var formdata = new FormData();
-formdata.append("file", fileInput.files[0], "landmark_demo.png");
+formdata.append("FILE", fileInput.files[0], "landmark_demo.png");
 
 var requestOptions = {
   method: 'POST',
@@ -433,7 +433,7 @@ url = "https://api.rapyd.ai/v1/vision/landmark"
 
 payload = {}
 files = [
-  ('file', open('landmark_demo.png','rb'))
+  ('FILE', open('landmark_demo.png','rb'))
 ]
 headers = {
   'PROVIDER': 'gcp',
@@ -457,7 +457,7 @@ headers <- c("ACCOUNT-ID" = "your-accountid",
              "Authorization" = "Bearer your-token",
              "PROVIDER" = "GCP")
 
-payload <- list(file = upload_file("landmark_demo.png"))
+payload <- list(FILE = upload_file("landmark_demo.png"))
 
 response <- POST(url, add_headers(headers), body = payload)
 result <- content(response, "parsed")
@@ -535,7 +535,7 @@ curl --location --request POST 'https://api.rapyd.ai/v1/vision/localize' \
 --header 'PROVIDER: gcp' \
 --header 'ACCOUNT-ID: your-accountid' \
 --header 'Authorization: Bearer your-token' \
---form 'file=localize_demo.png'
+--form 'FILE=localize_demo.png'
 
 ```
 
@@ -547,7 +547,7 @@ myHeaders.append("ACCOUNT-ID", "your-accountid");
 myHeaders.append("Authorization", "Bearer your-token");
 
 var formdata = new FormData();
-formdata.append("file", fileInput.files[0], "localize_demo.png");
+formdata.append("FILE", fileInput.files[0], "localize_demo.png");
 
 var requestOptions = {
   method: 'POST',
@@ -571,7 +571,7 @@ url = "https://api.rapyd.ai/v1/vision/localize"
 
 payload = {}
 files = [
-  ('file', open('localize_demo.png','rb'))
+  ('FILE', open('localize_demo.png','rb'))
 ]
 headers = {
   'PROVIDER': 'gcp',
@@ -596,7 +596,7 @@ headers <- c("ACCOUNT-ID" = "your-accountid",
              "Authorization" = "Bearer your-token",
              "PROVIDER" = "GCP")
 
-payload <- list(file = upload_file("localize_demo.png"))
+payload <- list(FILE = upload_file("localize_demo.png"))
 
 response <- POST(url, add_headers(headers), body = payload)
 result <- content(response, "parsed")
@@ -610,6 +610,235 @@ result <- content(response, "parsed")
 > Example response when provider is `gcp`:
 
 ```json
+
+{
+    "meta": {
+        "provider": "gcp",
+        "language": ""
+    },
+    "result": [
+        {
+            "description": "Wheel",
+            "score": 0.9287957,
+            "boundingPoly": [
+                {
+                    "x": 0.21665983,
+                    "y": 0.8182854
+                },
+                {
+                    "x": 0.3499323,
+                    "y": 0.8182854
+                },
+                {
+                    "x": 0.3499323,
+                    "y": 0.99085253
+                },
+                {
+                    "x": 0.21665983,
+                    "y": 0.99085253
+                }
+            ]
+        },
+        {
+            "description": "Pants",
+            "score": 0.9245052,
+            "boundingPoly": [
+                {
+                    "x": 0.61920214,
+                    "y": 0.7110153
+                },
+                {
+                    "x": 0.7021143,
+                    "y": 0.7110153
+                },
+                {
+                    "x": 0.7021143,
+                    "y": 0.9056063
+                },
+                {
+                    "x": 0.61920214,
+                    "y": 0.9056063
+                }
+            ]
+        },
+        {
+            "description": "Person",
+            "score": 0.8962906,
+            "boundingPoly": [
+                {
+                    "x": 0.072677895,
+                    "y": 0.4074293
+                },
+                {
+                    "x": 0.2129082,
+                    "y": 0.4074293
+                },
+                {
+                    "x": 0.2129082,
+                    "y": 0.9247987
+                },
+                {
+                    "x": 0.072677895,
+                    "y": 0.9247987
+                }
+            ]
+        },
+        {
+            "description": "Person",
+            "score": 0.84560376,
+            "boundingPoly": [
+                {
+                    "x": 0.6047527,
+                    "y": 0.501253
+                },
+                {
+                    "x": 0.7425805,
+                    "y": 0.501253
+                },
+                {
+                    "x": 0.7425805,
+                    "y": 0.9682343
+                },
+                {
+                    "x": 0.6047527,
+                    "y": 0.9682343
+                }
+            ]
+        },
+        {
+            "description": "Person",
+            "score": 0.8412963,
+            "boundingPoly": [
+                {
+                    "x": 0.20903979,
+                    "y": 0.44468263
+                },
+                {
+                    "x": 0.32457075,
+                    "y": 0.44468263
+                },
+                {
+                    "x": 0.32457075,
+                    "y": 0.64302355
+                },
+                {
+                    "x": 0.20903979,
+                    "y": 0.64302355
+                }
+            ]
+        },
+        {
+            "description": "Top",
+            "score": 0.8289973,
+            "boundingPoly": [
+                {
+                    "x": 0.60539424,
+                    "y": 0.5631088
+                },
+                {
+                    "x": 0.72236294,
+                    "y": 0.5631088
+                },
+                {
+                    "x": 0.72236294,
+                    "y": 0.73758584
+                },
+                {
+                    "x": 0.60539424,
+                    "y": 0.73758584
+                }
+            ]
+        },
+        {
+            "description": "Motorcycle",
+            "score": 0.824747,
+            "boundingPoly": [
+                {
+                    "x": 0.031174297,
+                    "y": 0.577174
+                },
+                {
+                    "x": 0.3698026,
+                    "y": 0.577174
+                },
+                {
+                    "x": 0.3698026,
+                    "y": 0.992837
+                },
+                {
+                    "x": 0.031174297,
+                    "y": 0.992837
+                }
+            ]
+        },
+        {
+            "description": "Person",
+            "score": 0.7636599,
+            "boundingPoly": [
+                {
+                    "x": 0.2532207,
+                    "y": 0.60297704
+                },
+                {
+                    "x": 0.35460314,
+                    "y": 0.60297704
+                },
+                {
+                    "x": 0.35460314,
+                    "y": 0.7952354
+                },
+                {
+                    "x": 0.2532207,
+                    "y": 0.7952354
+                }
+            ]
+        },
+        {
+            "description": "Pants",
+            "score": 0.7326683,
+            "boundingPoly": [
+                {
+                    "x": 0.07288302,
+                    "y": 0.67554694
+                },
+                {
+                    "x": 0.15689848,
+                    "y": 0.67554694
+                },
+                {
+                    "x": 0.15689848,
+                    "y": 0.8859668
+                },
+                {
+                    "x": 0.07288302,
+                    "y": 0.8859668
+                }
+            ]
+        },
+        {
+            "description": "Wheel",
+            "score": 0.65781885,
+            "boundingPoly": [
+                {
+                    "x": 0.0026128727,
+                    "y": 0.83867663
+                },
+                {
+                    "x": 0.10945473,
+                    "y": 0.83867663
+                },
+                {
+                    "x": 0.10945473,
+                    "y": 0.9945914
+                },
+                {
+                    "x": 0.0026128727,
+                    "y": 0.9945914
+                }
+            ]
+        }
+    ]
+}
 
 ```
 
@@ -642,7 +871,7 @@ curl --location --request POST 'https://api.rapyd.ai/v1/vision/text' \
 --header 'PROVIDER: gcp' \
 --header 'ACCOUNT-ID: your-accountid' \
 --header 'Authorization: Bearer your-token' \
---form 'file=text_demo.jpeg'
+--form 'FILE=text_demo.jpeg'
 
 ```
 
@@ -654,7 +883,7 @@ myHeaders.append("ACCOUNT-ID", "your-accountid");
 myHeaders.append("Authorization", "Bearer your-token");
 
 var formdata = new FormData();
-formdata.append("file", fileInput.files[0], "text_demo.jpeg");
+formdata.append("FILE", fileInput.files[0], "text_demo.jpeg");
 
 var requestOptions = {
   method: 'POST',
@@ -678,7 +907,7 @@ url = "https://api.rapyd.ai/v1/vision/text"
 
 payload = {}
 files = [
-  ('file', open('text_demo.jpeg','rb'))
+  ('FILE', open('text_demo.jpeg','rb'))
 ]
 headers = {
   'PROVIDER': 'gcp',
@@ -703,7 +932,7 @@ headers <- c("ACCOUNT-ID" = "your-accountid",
              "Authorization" = "Bearer your-token",
              "PROVIDER" = "GCP")
 
-payload <- list(file = upload_file("text_demo.jpeg"))
+payload <- list(FILE = upload_file("text_demo.jpeg"))
 
 response <- POST(url, add_headers(headers), body = payload)
 result <- content(response, "parsed")
