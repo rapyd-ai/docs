@@ -467,8 +467,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 
 <p>RAPYD.AI expects the Account ID and the Token to be included in all API requests to the server in a header that looks like the following:</p>
 
-<p><code>&#39;ACCOUNT-ID: your-accountid&#39;</code>
-<code>&#39;Authorization: Bearer your-token&#39;</code></p>
+<p><code>&#39;ACCOUNT-ID: your-accountid&#39;</code> <br /> <code>&#39;Authorization: Bearer your-token&#39;</code></p>
 
 <aside class="notice">
 You must replace <code>your-token</code> and <code>your-accountid</code> with your personal API credentials.
@@ -983,7 +982,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 <span class="nt">--header</span> <span class="s1">'PROVIDER: gcp'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'ACCOUNT-ID: your-accountid'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Bearer your-token'</span> <span class="se">\</span>
-<span class="nt">--form</span> <span class="s1">'file=face_demo.png'</span>
+<span class="nt">--form</span> <span class="s1">'FILE=face_demo.png'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
@@ -992,7 +991,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 <span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bearer your-token</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">formdata</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
-<span class="nx">formdata</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">file</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="dl">"</span><span class="s2">face_demo.png</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">formdata</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">FILE</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="dl">"</span><span class="s2">face_demo.png</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
@@ -1013,7 +1012,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">(</span><span class="s">'file'</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">'face_demo.png'</span><span class="p">,</span><span class="s">'rb'</span><span class="p">))</span>
+  <span class="p">(</span><span class="s">'FILE'</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">'face_demo.png'</span><span class="p">,</span><span class="s">'rb'</span><span class="p">))</span>
 <span class="p">]</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s">'PROVIDER'</span><span class="p">:</span> <span class="s">'gcp'</span><span class="p">,</span>
@@ -1034,7 +1033,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
              </span><span class="s2">"Authorization"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Bearer your-token"</span><span class="p">,</span><span class="w">
              </span><span class="s2">"PROVIDER"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"GCP"</span><span class="p">)</span><span class="w">
 
-</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">upload_file</span><span class="p">(</span><span class="s2">"face_demo.png"</span><span class="p">))</span><span class="w">
+</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">FILE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">upload_file</span><span class="p">(</span><span class="s2">"face_demo.png"</span><span class="p">))</span><span class="w">
 
 </span><span class="n">response</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">POST</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">add_headers</span><span class="p">(</span><span class="n">headers</span><span class="p">),</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payload</span><span class="p">)</span><span class="w">
 </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">content</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="s2">"parsed"</span><span class="p">)</span><span class="w">
@@ -1355,7 +1354,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 <span class="nt">--header</span> <span class="s1">'PROVIDER: gcp'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'ACCOUNT-ID: your-accountid'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Bearer your-token'</span> <span class="se">\</span>
-<span class="nt">--form</span> <span class="s1">'file=landmark_demo.png'</span>
+<span class="nt">--form</span> <span class="s1">'FILE=landmark_demo.png'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
@@ -1364,7 +1363,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 <span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bearer your-token</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">formdata</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
-<span class="nx">formdata</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">file</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="dl">"</span><span class="s2">landmark_demo.png</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">formdata</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">FILE</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="dl">"</span><span class="s2">landmark_demo.png</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
@@ -1385,7 +1384,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">(</span><span class="s">'file'</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">'landmark_demo.png'</span><span class="p">,</span><span class="s">'rb'</span><span class="p">))</span>
+  <span class="p">(</span><span class="s">'FILE'</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">'landmark_demo.png'</span><span class="p">,</span><span class="s">'rb'</span><span class="p">))</span>
 <span class="p">]</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s">'PROVIDER'</span><span class="p">:</span> <span class="s">'gcp'</span><span class="p">,</span>
@@ -1406,7 +1405,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
              </span><span class="s2">"Authorization"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Bearer your-token"</span><span class="p">,</span><span class="w">
              </span><span class="s2">"PROVIDER"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"GCP"</span><span class="p">)</span><span class="w">
 
-</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">upload_file</span><span class="p">(</span><span class="s2">"landmark_demo.png"</span><span class="p">))</span><span class="w">
+</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">FILE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">upload_file</span><span class="p">(</span><span class="s2">"landmark_demo.png"</span><span class="p">))</span><span class="w">
 
 </span><span class="n">response</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">POST</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">add_headers</span><span class="p">(</span><span class="n">headers</span><span class="p">),</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payload</span><span class="p">)</span><span class="w">
 </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">content</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="s2">"parsed"</span><span class="p">)</span><span class="w">
@@ -1488,7 +1487,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 <span class="nt">--header</span> <span class="s1">'PROVIDER: gcp'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'ACCOUNT-ID: your-accountid'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Bearer your-token'</span> <span class="se">\</span>
-<span class="nt">--form</span> <span class="s1">'file=localize_demo.png'</span>
+<span class="nt">--form</span> <span class="s1">'FILE=localize_demo.png'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
@@ -1497,7 +1496,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 <span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bearer your-token</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">formdata</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
-<span class="nx">formdata</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">file</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="dl">"</span><span class="s2">localize_demo.png</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">formdata</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">FILE</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="dl">"</span><span class="s2">localize_demo.png</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
@@ -1518,7 +1517,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">(</span><span class="s">'file'</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">'localize_demo.png'</span><span class="p">,</span><span class="s">'rb'</span><span class="p">))</span>
+  <span class="p">(</span><span class="s">'FILE'</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">'localize_demo.png'</span><span class="p">,</span><span class="s">'rb'</span><span class="p">))</span>
 <span class="p">]</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s">'PROVIDER'</span><span class="p">:</span> <span class="s">'gcp'</span><span class="p">,</span>
@@ -1540,7 +1539,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
              </span><span class="s2">"Authorization"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Bearer your-token"</span><span class="p">,</span><span class="w">
              </span><span class="s2">"PROVIDER"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"GCP"</span><span class="p">)</span><span class="w">
 
-</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">upload_file</span><span class="p">(</span><span class="s2">"localize_demo.png"</span><span class="p">))</span><span class="w">
+</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">FILE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">upload_file</span><span class="p">(</span><span class="s2">"localize_demo.png"</span><span class="p">))</span><span class="w">
 
 </span><span class="n">response</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">POST</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">add_headers</span><span class="p">(</span><span class="n">headers</span><span class="p">),</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payload</span><span class="p">)</span><span class="w">
 </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">content</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="s2">"parsed"</span><span class="p">)</span><span class="w">
@@ -1554,6 +1553,235 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 <p>Example response when provider is <code>gcp</code>:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gcp"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wheel"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9287957</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.21665983</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8182854</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3499323</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8182854</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3499323</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.99085253</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.21665983</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.99085253</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pants"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9245052</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.61920214</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7110153</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7021143</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7110153</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7021143</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9056063</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.61920214</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9056063</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Person"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8962906</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.072677895</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4074293</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2129082</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4074293</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2129082</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9247987</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.072677895</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9247987</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Person"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.84560376</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6047527</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.501253</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7425805</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.501253</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7425805</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9682343</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6047527</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9682343</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Person"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8412963</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.20903979</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.44468263</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.32457075</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.44468263</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.32457075</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.64302355</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.20903979</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.64302355</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Top"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8289973</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.60539424</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5631088</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.72236294</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5631088</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.72236294</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.73758584</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.60539424</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.73758584</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Motorcycle"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.824747</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.031174297</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.577174</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3698026</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.577174</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3698026</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.992837</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.031174297</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.992837</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Person"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7636599</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2532207</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.60297704</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.35460314</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.60297704</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.35460314</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7952354</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2532207</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7952354</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pants"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7326683</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07288302</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.67554694</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15689848</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.67554694</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15689848</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8859668</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07288302</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8859668</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wheel"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.65781885</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingPoly"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0026128727</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.83867663</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.10945473</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.83867663</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.10945473</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9945914</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"x"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0026128727</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"y"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9945914</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
 </span></code></pre></div><h3 id='file-properties-3'>File Properties</h3>
 <p>The request sends a file over HTTPS. </p>
 
@@ -1590,7 +1818,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 <span class="nt">--header</span> <span class="s1">'PROVIDER: gcp'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'ACCOUNT-ID: your-accountid'</span> <span class="se">\</span>
 <span class="nt">--header</span> <span class="s1">'Authorization: Bearer your-token'</span> <span class="se">\</span>
-<span class="nt">--form</span> <span class="s1">'file=text_demo.jpeg'</span>
+<span class="nt">--form</span> <span class="s1">'FILE=text_demo.jpeg'</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
 <span class="kd">var</span> <span class="nx">myHeaders</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Headers</span><span class="p">();</span>
@@ -1599,7 +1827,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 <span class="nx">myHeaders</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">Authorization</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Bearer your-token</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">formdata</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">();</span>
-<span class="nx">formdata</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">file</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="dl">"</span><span class="s2">text_demo.jpeg</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">formdata</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="dl">"</span><span class="s2">FILE</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fileInput</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="dl">"</span><span class="s2">text_demo.jpeg</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">requestOptions</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
@@ -1620,7 +1848,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">files</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">(</span><span class="s">'file'</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">'text_demo.jpeg'</span><span class="p">,</span><span class="s">'rb'</span><span class="p">))</span>
+  <span class="p">(</span><span class="s">'FILE'</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s">'text_demo.jpeg'</span><span class="p">,</span><span class="s">'rb'</span><span class="p">))</span>
 <span class="p">]</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s">'PROVIDER'</span><span class="p">:</span> <span class="s">'gcp'</span><span class="p">,</span>
@@ -1642,7 +1870,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
              </span><span class="s2">"Authorization"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Bearer your-token"</span><span class="p">,</span><span class="w">
              </span><span class="s2">"PROVIDER"</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"GCP"</span><span class="p">)</span><span class="w">
 
-</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">upload_file</span><span class="p">(</span><span class="s2">"text_demo.jpeg"</span><span class="p">))</span><span class="w">
+</span><span class="n">payload</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">FILE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">upload_file</span><span class="p">(</span><span class="s2">"text_demo.jpeg"</span><span class="p">))</span><span class="w">
 
 </span><span class="n">response</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">POST</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">add_headers</span><span class="p">(</span><span class="n">headers</span><span class="p">),</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">payload</span><span class="p">)</span><span class="w">
 </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">content</span><span class="p">(</span><span class="n">response</span><span class="p">,</span><span class="w"> </span><span class="s2">"parsed"</span><span class="p">)</span><span class="w">
