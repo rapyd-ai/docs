@@ -103,6 +103,21 @@ fetch("https://api.rapyd.ai/v1/user/token", requestOptions)
   
 ```
 
+```jsx
+
+var unirest = require('unirest');
+var req = unirest('POST', 'https://api.rapyd.ai/v1/user/token')
+  .headers({
+    'Content-Type': 'application/json'
+  })
+  .send(JSON.stringify({"email":"your-email","password":"your-password"}))
+  .end(function (res) { 
+    if (res.error) throw new Error(res.error); 
+    console.log(res.raw_body);
+  });
+  
+```
+
 ```python
 
 import requests

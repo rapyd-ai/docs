@@ -20,7 +20,7 @@ curl --location --request POST 'https://api.rapyd.ai/v1/vision/face' \
 --header 'PROVIDER: gcp' \
 --header 'ACCOUNT-ID: your-accountid' \
 --header 'Authorization: Bearer your-token' \
---form 'FILE=face_demo.png'
+--form 'file=face_demo.png'
 
 ```
 
@@ -32,7 +32,7 @@ myHeaders.append("ACCOUNT-ID", "your-accountid");
 myHeaders.append("Authorization", "Bearer your-token");
 
 var formdata = new FormData();
-formdata.append("FILE", fileInput.files[0], "face_demo.png");
+formdata.append("file", fileInput.files[0], "face_demo.png");
 
 var requestOptions = {
   method: 'POST',
@@ -48,6 +48,23 @@ fetch("https://api.rapyd.ai/v1/vision/face", requestOptions)
 
 ```
 
+```jsx
+
+var unirest = require('unirest');
+var req = unirest('POST', 'https://api.rapyd.ai/v1/vision/face')
+  .headers({
+    'PROVIDER': 'gcp',
+    'ACCOUNT-ID': 'your-accountid',
+    'Authorization': 'Bearer your-token'
+  })
+  .attach('file', 'face_demo.png')
+  .end(function (res) { 
+    if (res.error) throw new Error(res.error); 
+    console.log(res.raw_body);
+  });
+
+```
+
 ```python
 
 import requests
@@ -55,16 +72,15 @@ import requests
 url = "https://api.rapyd.ai/v1/vision/face"
 
 payload = {}
-files = [
-  ('FILE', open('face_demo.png','rb'))
-]
+files = [('file', open('face_demo.png', 'rb'))]
 headers = {
-  'PROVIDER': 'gcp',
-  'ACCOUNT-ID': 'your-accountid',
-  'Authorization': 'Bearer your-token'
+    'PROVIDER': 'gcp',
+    'ACCOUNT-ID': 'your-accountid',
+    'Authorization': 'Bearer your-token'
 }
 
-response = requests.request("POST", url, headers=headers, data = payload, files = files)
+response = requests.request(
+    "POST", url, headers=headers, data=payload, files=files)
 
 print(response.text.encode('utf8'))
 
@@ -78,9 +94,9 @@ url <- "https://api.rapyd.ai/v1/vision/face"
 
 headers <- c("ACCOUNT-ID" = "your-accountid", 
              "Authorization" = "Bearer your-token",
-             "PROVIDER" = "GCP")
+             "PROVIDER" = "gcp")
 
-payload <- list(FILE = upload_file("face_demo.png"))
+payload <- list(file = upload_file("face_demo.png"))
 
 response <- POST(url, add_headers(headers), body = payload)
 result <- content(response, "parsed")
@@ -373,7 +389,7 @@ The request sends a file over HTTPS.
 
 File Properties | Description 
 --------------- | ----------- 
-Image File Size | Maximum file size is 7 MB
+Image File Size | Maximum file size is 2 MB
 File Format | The following image types are supported:<ul><li>JPEG</li><li>PNG8</li><li>PNG24</li><li>GIF</li><li>Animated GIF (first frame only)</li><li>BMP</li><li>WEBP</li><li>RAW</li><li>ICO</li><li>PDF</li><li>TIFF</li></ul>
 Image Dimensions | The recommended image size is 1600 x 1200 pixels (ca. 1.9M pixels). The larger the faces on the image the better. The distance between eyes is most important.
 
@@ -397,7 +413,7 @@ curl --location --request POST 'https://api.rapyd.ai/v1/vision/landmark' \
 --header 'PROVIDER: gcp' \
 --header 'ACCOUNT-ID: your-accountid' \
 --header 'Authorization: Bearer your-token' \
---form 'FILE=landmark_demo.png'
+--form 'file=landmark_demo.png'
 
 ```
 
@@ -409,7 +425,7 @@ myHeaders.append("ACCOUNT-ID", "your-accountid");
 myHeaders.append("Authorization", "Bearer your-token");
 
 var formdata = new FormData();
-formdata.append("FILE", fileInput.files[0], "landmark_demo.png");
+formdata.append("file", fileInput.files[0], "landmark_demo.png");
 
 var requestOptions = {
   method: 'POST',
@@ -425,6 +441,23 @@ fetch("https://api.rapyd.ai/v1/vision/landmark", requestOptions)
 
 ```
 
+```jsx
+
+var unirest = require('unirest');
+var req = unirest('POST', 'https://api.rapyd.ai/v1/vision/landmark')
+  .headers({
+    'PROVIDER': 'gcp',
+    'ACCOUNT-ID': 'your-accountid',
+    'Authorization': 'Bearer your-token'
+  })
+  .attach('file', 'landmark_demo.png')
+  .end(function (res) { 
+    if (res.error) throw new Error(res.error); 
+    console.log(res.raw_body);
+  });
+
+```
+
 ```python
 
 import requests
@@ -433,7 +466,7 @@ url = "https://api.rapyd.ai/v1/vision/landmark"
 
 payload = {}
 files = [
-  ('FILE', open('landmark_demo.png','rb'))
+  ('file', open('landmark_demo.png','rb'))
 ]
 headers = {
   'PROVIDER': 'gcp',
@@ -455,9 +488,9 @@ url <- "https://api.rapyd.ai/v1/vision/landmark"
 
 headers <- c("ACCOUNT-ID" = "your-accountid", 
              "Authorization" = "Bearer your-token",
-             "PROVIDER" = "GCP")
+             "PROVIDER" = "gcp")
 
-payload <- list(FILE = upload_file("landmark_demo.png"))
+payload <- list(file = upload_file("landmark_demo.png"))
 
 response <- POST(url, add_headers(headers), body = payload)
 result <- content(response, "parsed")
@@ -515,7 +548,7 @@ The request sends a file over HTTPS.
 
 File Properties | Description 
 --------------- | ----------- 
-Image File Size | Maximum file size is 7 MB
+Image File Size | Maximum file size is 2 MB
 File Format | The following image types are supported:<ul><li>JPEG</li><li>PNG8</li><li>PNG24</li><li>GIF</li><li>Animated GIF (first frame only)</li><li>BMP</li><li>WEBP</li><li>RAW</li><li>ICO</li><li>PDF</li><li>TIFF</li></ul>
 Image Dimensions | The recommended image size is 640 x 480 pixels (ca. 300k pixels). Larger image sizes may not gain much in accuracy, while greatly increasing bandwidth usage and processing time.
 
@@ -535,7 +568,7 @@ curl --location --request POST 'https://api.rapyd.ai/v1/vision/localize' \
 --header 'PROVIDER: gcp' \
 --header 'ACCOUNT-ID: your-accountid' \
 --header 'Authorization: Bearer your-token' \
---form 'FILE=localize_demo.png'
+--form 'file=localize_demo.png'
 
 ```
 
@@ -547,7 +580,7 @@ myHeaders.append("ACCOUNT-ID", "your-accountid");
 myHeaders.append("Authorization", "Bearer your-token");
 
 var formdata = new FormData();
-formdata.append("FILE", fileInput.files[0], "localize_demo.png");
+formdata.append("file", fileInput.files[0], "localize_demo.png");
 
 var requestOptions = {
   method: 'POST',
@@ -563,6 +596,23 @@ fetch("https://api.rapyd.ai/v1/vision/localize", requestOptions)
 
 ```
 
+```jsx
+
+var unirest = require('unirest');
+var req = unirest('POST', 'https://api.rapyd.ai/v1/vision/localize')
+  .headers({
+    'PROVIDER': 'gcp',
+    'ACCOUNT-ID': 'your-accountid',
+    'Authorization': 'Bearer your-token'
+  })
+  .attach('file', 'localize_demo.png')
+  .end(function (res) { 
+    if (res.error) throw new Error(res.error); 
+    console.log(res.raw_body);
+  });
+
+```
+
 ```python
 
 import requests
@@ -571,7 +621,7 @@ url = "https://api.rapyd.ai/v1/vision/localize"
 
 payload = {}
 files = [
-  ('FILE', open('localize_demo.png','rb'))
+  ('file', open('localize_demo.png','rb'))
 ]
 headers = {
   'PROVIDER': 'gcp',
@@ -594,9 +644,9 @@ url <- "https://api.rapyd.ai/v1/vision/localize"
 
 headers <- c("ACCOUNT-ID" = "your-accountid", 
              "Authorization" = "Bearer your-token",
-             "PROVIDER" = "GCP")
+             "PROVIDER" = "gcp")
 
-payload <- list(FILE = upload_file("localize_demo.png"))
+payload <- list(file = upload_file("localize_demo.png"))
 
 response <- POST(url, add_headers(headers), body = payload)
 result <- content(response, "parsed")
@@ -848,7 +898,7 @@ The request sends a file over HTTPS.
 
 File Properties | Description 
 --------------- | ----------- 
-Image File Size | Maximum file size is 7 MB
+Image File Size | Maximum file size is 2 MB
 File Format | The following image types are supported:<ul><li>JPEG</li><li>PNG8</li><li>PNG24</li><li>GIF</li><li>Animated GIF (first frame only)</li><li>BMP</li><li>WEBP</li><li>RAW</li><li>ICO</li><li>PDF</li><li>TIFF</li></ul>
 Image Dimensions | The recommended image size is 640 x 480 pixels (ca. 300k pixels). Larger image sizes may not gain much in accuracy, while greatly increasing bandwidth usage and processing time.
 
@@ -871,7 +921,7 @@ curl --location --request POST 'https://api.rapyd.ai/v1/vision/text' \
 --header 'PROVIDER: gcp' \
 --header 'ACCOUNT-ID: your-accountid' \
 --header 'Authorization: Bearer your-token' \
---form 'FILE=text_demo.jpeg'
+--form 'file=text_demo.png'
 
 ```
 
@@ -883,7 +933,7 @@ myHeaders.append("ACCOUNT-ID", "your-accountid");
 myHeaders.append("Authorization", "Bearer your-token");
 
 var formdata = new FormData();
-formdata.append("FILE", fileInput.files[0], "text_demo.jpeg");
+formdata.append("file", fileInput.files[0], "text_demo.png");
 
 var requestOptions = {
   method: 'POST',
@@ -892,11 +942,28 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://api.rapyd.ai/v1/vision/localize", requestOptions)
+fetch("https://api.rapyd.ai/v1/vision/text", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 
+```
+
+```jsx
+
+var unirest = require('unirest');
+var req = unirest('POST', 'https://api.rapyd.ai/v1/vision/text')
+  .headers({
+    'PROVIDER': 'gcp',
+    'ACCOUNT-ID': 'your-accountid',
+    'Authorization': 'Bearer your-token'
+  })
+  .attach('file', 'text_demo.png')
+  .end(function (res) { 
+    if (res.error) throw new Error(res.error); 
+    console.log(res.raw_body);
+  });
+  
 ```
 
 ```python
@@ -907,7 +974,7 @@ url = "https://api.rapyd.ai/v1/vision/text"
 
 payload = {}
 files = [
-  ('FILE', open('text_demo.jpeg','rb'))
+  ('file', open('text_demo.png','rb'))
 ]
 headers = {
   'PROVIDER': 'gcp',
@@ -930,9 +997,9 @@ url <- "https://api.rapyd.ai/v1/vision/text"
 
 headers <- c("ACCOUNT-ID" = "your-accountid", 
              "Authorization" = "Bearer your-token",
-             "PROVIDER" = "GCP")
+             "PROVIDER" = "gcp")
 
-payload <- list(FILE = upload_file("text_demo.jpeg"))
+payload <- list(file = upload_file("text_demo.png"))
 
 response <- POST(url, add_headers(headers), body = payload)
 result <- content(response, "parsed")
@@ -1151,7 +1218,7 @@ The request sends a file over HTTPS.
 
 File Properties | Description 
 --------------- | ----------- 
-Image File Size | Maximum file size is 7 MB
+Image File Size | Maximum file size is 2 MB
 File Format | The following image types are supported:<ul><li>JPEG</li><li>PNG8</li><li>PNG24</li><li>GIF</li><li>Animated GIF (first frame only)</li><li>BMP</li><li>WEBP</li><li>RAW</li><li>ICO</li><li>PDF</li><li>TIFF</li></ul>
 Image Dimensions | The recommended image size is 1024 x 768 pixels (ca. 786k pixels). The total image size must not exceed 75M pixels (length x width).
 
