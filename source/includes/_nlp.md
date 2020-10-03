@@ -16,11 +16,10 @@ curl --location --request POST 'https://api.rapyd.ai/v1/nlp/sentiment' \
 --header 'ACCOUNT-ID: your-accountid' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer your-token' \
---header 'Content-Type: text/plain' \
 --data-raw '{
     "text": "I don'\''t like old cabin cruisers.",
-    "provider":"AWS",
-    "language": "Auto"
+    "provider":"aws",
+    "language": "auto"
 }'
 
 ```
@@ -31,9 +30,12 @@ var myHeaders = new Headers();
 myHeaders.append("ACCOUNT-ID", "your-accountid");
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Authorization", "Bearer your-token");
-myHeaders.append("Content-Type", "text/plain");
 
-var raw = "{\n    \"text\": \"I don't like old cabin cruisers.\",\n    \"provider\":\"AWS\",\n    \"language\": \"Auto\"\n}";
+var raw = JSON.stringify({
+  "text": "I don't like old cabin cruisers.",
+  "provider": "aws",
+  "language": "auto"
+});
 
 var requestOptions = {
   method: 'POST',
@@ -42,10 +44,31 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://api.rapyd.ai/v1/nlp/sentiment", requestOptions)
+fetch("https://api.rapyd.ai/v1/nlp/sentiment", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
+
+```
+
+```jsx
+
+var unirest = require('unirest');
+var req = unirest('POST', 'https://api.rapyd.ai/v1/nlp/sentiment')
+  .headers({
+    'ACCOUNT-ID': 'your-accountid',
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-token'
+  })
+  .send(JSON.stringify({
+    "text": "I don't like old cabin cruisers.",
+    "provider": "aws",
+    "language": "auto"
+  }))
+  .end(function(res) {
+    if (res.error) throw new Error(res.error);
+    console.log(res.raw_body);
+  });
 
 ```
 
@@ -53,17 +76,20 @@ fetch("http://api.rapyd.ai/v1/nlp/sentiment", requestOptions)
 
 import requests
 
-url = "https://api.rapyd.ai/v1/nlp/sentiment"
-
-payload = "{\n    \"text\": \"I don't like old cabin cruisers.\",\n    \"provider\":\"AWS\",\n    \"language\": \"Auto\"\n}"
 headers = {
   'ACCOUNT-ID': 'your-accountid',
-  'Content-Type': 'application/json',
   'Authorization': 'Bearer your-token',
-  'Content-Type': 'text/plain'
+  'Content-Type': 'application/json'
 }
 
-response = requests.request("POST", url, headers=headers, data = payload)
+payload = {
+  "text": "I don't like old cabin cruisers.", 
+  "provider": "aws",
+  "language": "auto"
+  }
+
+url = "https://api.rapyd.ai/v1/nlp/sentiment"
+response = requests.request("POST", url, headers=headers, json = payload)
 
 print(response.text.encode('utf8'))
 
@@ -76,14 +102,17 @@ library(httr)
 url <- "https://api.rapyd.ai/v1/nlp/sentiment"
 
 
-payload <- list(text = "I don't like old cabin cruisers.", 
-           provider = "aws")
+payload <- list("text" = "I don't like old cabin cruisers.", 
+                "provider" = "aws",
+                "language" = "auto")
 
-headers <- c(ACCOUNTID = "your-accountid", 
-             Authorization = "Bearer your-token")
+headers <- c("ACCOUNT-ID" = "your-accountid", 
+             "Authorization" = "Bearer your-token",
+             "Content-Type" = "application/json")
 
 response <- POST(url, add_headers(headers), body = payload, encode = "json")
 result <- content(response, "parsed")
+result
 
 ```
 
@@ -181,10 +210,10 @@ curl --location --request POST 'https://api.rapyd.ai/v1/nlp/entities' \
 --header 'ACCOUNT-ID: your-accountid' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer your-token' \
---header 'Content-Type: text/plain' \
 --data-raw '{
     "text": "Next summer I want to visit Barcelona and Lion.",
-    "provider":"aws"
+    "provider":"aws",
+    "language": "auto"
 }'
 
 ```
@@ -195,9 +224,12 @@ var myHeaders = new Headers();
 myHeaders.append("ACCOUNT-ID", "your-accountid");
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Authorization", "Bearer your-token");
-myHeaders.append("Content-Type", "text/plain");
 
-var raw = "{\n    \"text\": \"Next summer I want to visit Barcelona and Lion.\",\n    \"provider\":\"aws\"\n}";
+var raw = JSON.stringify({
+  "text": "Next summer I want to visit Barcelona and Lion.",
+  "provider": "aws",
+  "language": "auto"
+});
 
 var requestOptions = {
   method: 'POST',
@@ -213,21 +245,45 @@ fetch("https://api.rapyd.ai/v1/nlp/entities", requestOptions)
 
 ```
 
+```jsx
+
+var unirest = require('unirest');
+var req = unirest('POST', 'https://api.rapyd.ai/v1/nlp/entities')
+  .headers({
+    'ACCOUNT-ID': 'your-accountid',
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-token'
+  })
+  .send(JSON.stringify({
+    "text": "Next summer I want to visit Barcelona and Lion.",
+    "provider": "aws",
+    "language": "auto"
+  }))
+  .end(function(res) {
+    if (res.error) throw new Error(res.error);
+    console.log(res.raw_body);
+  });
+
+```
+
 ```python
 
 import requests
 
-url = "https://api.rapyd.ai/v1/nlp/entities"
-
-payload = "{\n    \"text\": \"Next summer I want to visit Barcelona and Lion.\",\n    \"provider\":\"aws\"\n}"
 headers = {
   'ACCOUNT-ID': 'your-accountid',
-  'Content-Type': 'application/json',
   'Authorization': 'Bearer your-token',
-  'Content-Type': 'text/plain'
+  'Content-Type': 'application/json'
 }
 
-response = requests.request("POST", url, headers=headers, data = payload)
+payload = {
+  "text": "Next summer I want to visit Barcelona and Lion.", 
+  "provider": "aws",
+  "language": "auto"
+  }
+
+url = "https://api.rapyd.ai/v1/nlp/entities"
+response = requests.request("POST", url, headers=headers, json = payload)
 
 print(response.text.encode('utf8'))
 
@@ -241,14 +297,17 @@ library(httr)
 url <- "https://api.rapyd.ai/v1/nlp/entities"
 
 
-payload <- list(text = "Next summer I want to visit Barcelona and Lion.", 
-           provider = "aws")
+payload <- list("text" = "Next summer I want to visit Barcelona and Lion.", 
+                "provider" = "aws",
+                "language" = "auto")
 
-headers <- c(ACCOUNTID = "your-accountid", 
-             Authorization = "Bearer your-token")
+headers <- c("ACCOUNT-ID" = "your-accountid", 
+             "Authorization" = "Bearer your-token",
+             "Content-Type" = "application/json")
 
 response <- POST(url, add_headers(headers), body = payload, encode = "json")
 result <- content(response, "parsed")
+result
 
 ```
 
@@ -371,7 +430,6 @@ curl --location --request POST 'https://api.rapyd.ai/v1/nlp/keyphrase' \
 --header 'ACCOUNT-ID: your-accountid' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer your-token' \
---header 'Content-Type: text/plain' \
 --data-raw '{
     "text": "Seems it never rains in Southern California.",
     "provider":"aws",
@@ -386,9 +444,12 @@ var myHeaders = new Headers();
 myHeaders.append("ACCOUNT-ID", "your-accountid");
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Authorization", "Bearer your-token");
-myHeaders.append("Content-Type", "text/plain");
 
-var raw = "{\n    \"text\": \"Seems it never rains in Southern California.\",\n    \"provider\":\"aws\",\n    \"language\": \"auto\"\n}";
+var raw = JSON.stringify({
+  "text": "Seems it never rains in Southern California.",
+  "provider": "aws",
+  "language": "auto"
+});
 
 var requestOptions = {
   method: 'POST',
@@ -404,21 +465,45 @@ fetch("https://api.rapyd.ai/v1/nlp/keyphrase", requestOptions)
 
 ```
 
+```jsx
+
+var unirest = require('unirest');
+var req = unirest('POST', 'https://api.rapyd.ai/v1/nlp/keyphrase')
+  .headers({
+    'ACCOUNT-ID': 'your-accountid',
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-token'
+  })
+  .send(JSON.stringify({
+    "text": "Seems it never rains in Southern California.",
+    "provider": "aws",
+    "language": "auto"
+  }))
+  .end(function(res) {
+    if (res.error) throw new Error(res.error);
+    console.log(res.raw_body);
+  });
+
+```
+
 ```python
 
 import requests
 
-url = "https://api.rapyd.ai/v1/nlp/keyphrase"
-
-payload = "{\n    \"text\": \"Seems it never rains in Southern California.\",\n    \"provider\":\"aws\",\n    \"language\": \"auto\"\n}"
 headers = {
   'ACCOUNT-ID': 'your-accountid',
-  'Content-Type': 'application/json',
   'Authorization': 'Bearer your-token',
-  'Content-Type': 'text/plain'
+  'Content-Type': 'application/json'
 }
 
-response = requests.request("POST", url, headers=headers, data = payload)
+payload = {
+  "text": "Seems it never rains in Southern California.", 
+  "provider": "aws",
+  "language": "auto"
+  }
+
+url = "https://api.rapyd.ai/v1/nlp/keyphrase"
+response = requests.request("POST", url, headers=headers, json = payload)
 
 print(response.text.encode('utf8'))
 
@@ -431,14 +516,17 @@ library(httr)
 url <- "https://api.rapyd.ai/v1/nlp/keyphrase"
 
 
-payload <- list(text = "Seems it never rains in Southern California.", 
-           provider = "aws")
+payload <- list("text" = "Seems it never rains in Southern California.", 
+                "provider" = "aws",
+                "language" = "auto")
 
-headers <- c(ACCOUNTID = "your-accountid", 
-             Authorization = "Bearer your-token")
+headers <- c("ACCOUNT-ID" = "your-accountid", 
+             "Authorization" = "Bearer your-token",
+             "Content-Type" = "application/json")
 
 response <- POST(url, add_headers(headers), body = payload, encode = "json")
 result <- content(response, "parsed")
+result
 
 ```
 
