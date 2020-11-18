@@ -2,8 +2,6 @@
 
 Computer Vision enables machines to "see" images and recognize objects, entities and texts or extract meta information from a given image.
 
-Currently, the Computer Vision AI services are only available through the provider Google Cloud Platform (`gcp`). More providers will follow soon.
-
 ## Face Detection
 
 Face detection identifies faces on images and analyses various characteristics such as the face expression or facial features like eyes, nose or mouth positions.
@@ -383,6 +381,109 @@ result <- content(response, "parsed")
 }
 ```
 
+> Example response when provider is `aws`
+
+```json
+{
+   "meta":{
+      "language":"",
+      "provider":"aws"
+   },
+   "result":{
+      "faceDetails":[
+         {
+            "ageRange":"None",
+            "beard":"None",
+            "boundingBox":{
+               "height":0.26589525,
+               "left":0.37521443,
+               "top":0.06623106,
+               "width":0.2295874
+            },
+            "confidence":99.99913,
+            "emotions":"None",
+            "eyeglasses":"None",
+            "eyesOpen":"None",
+            "gender":"None",
+            "landmarks":[
+               {
+                  "type":"eyeLeft",
+                  "x":0.44272083,
+                  "y":0.17161196
+               },
+               {
+                  "type":"eyeRight",
+                  "x":0.5494187,
+                  "y":0.17190441
+               },
+               {
+                  "type":"mouthLeft",
+                  "x":0.4502387,
+                  "y":0.2601221
+               },
+               {
+                  "type":"mouthRight",
+                  "x":0.5393077,
+                  "y":0.26036945
+               },
+               {
+                  "type":"nose",
+                  "x":0.49708697,
+                  "y":0.2186894
+               }
+            ],
+            "mouthOpen":"None",
+            "mustache":"None",
+            "pose":{
+               "pitch":3.009071,
+               "roll":-0.5177236,
+               "yaw":1.9940312
+            },
+            "quality":{
+               "brightness":90.198135,
+               "sharpness":95.51619
+            },
+            "smile":"None",
+            "sunglasses":"None"
+         }
+      ],
+      "orientationCorrection":"None"
+   }
+}
+```
+
+> Example response when provider is ```azure```
+
+```azure
+{
+   "meta":{
+      "language":"",
+      "provider":"azure"
+   },
+   "result":{
+      "faces":[
+         {
+            "age":57,
+            "faceRectangle":{
+               "height":252,
+               "left":382,
+               "top":146,
+               "width":252
+            },
+            "gender":"Male"
+         }
+      ]
+   }
+}
+```
+
+
+### Request Parameters
+
+Parameter | Default | Description 
+--------- | --------| -----------
+Provider | `auto` | The AI service provider you want to use. The AI Service provider can be any of the following: <ul><li>`aws` (Amazon Rekognition)</li><li>`azure` (Microsoft Azure Cognitive Services)</li><li>`gcp` (Google Cloud Vision API)</li><li>`auto` (let RAPYD.AI choose service provider automatically.)</li></ul>
+
 ### File Properties
 
 The request sends a file over HTTPS. 
@@ -541,6 +642,51 @@ result <- content(response, "parsed")
     ]
 }
 ```
+
+> Example response when provider is `azure`:
+
+```json
+{
+   "meta":{
+      "language":"",
+      "provider":"azure"
+   },
+   "result":{
+      "categories":[
+         {
+            "detail":{
+               "landmarks":[
+                  {
+                     "confidence":0.9999419450759888,
+                     "name":"Eiffel Tower"
+                  }
+               ]
+            },
+            "name":"building_",
+            "score":0.3671875
+         },
+         {
+            "detail":{
+               "landmarks":[
+                  {
+                     "confidence":0.9999419450759888,
+                     "name":"Eiffel Tower"
+                  }
+               ]
+            },
+            "name":"building_church",
+            "score":0.609375
+         }
+      ]
+   }
+}
+```
+
+### Request Parameters
+
+Parameter | Default | Description 
+--------- | --------| -----------
+Provider | `auto` | The AI service provider you want to use. The AI Service provider can be any of the following: <ul><li>`azure` (Microsoft Azure Cognitive Services)</li><li>`gcp` (Google Cloud Vision API)</li><li>`auto` (let RAPYD.AI choose service provider automatically.)</li></ul>
 
 ### File Properties
 
@@ -892,6 +1038,404 @@ result <- content(response, "parsed")
 
 ```
 
+> Example response when provider is `aws`:
+
+```json
+{
+   "meta":{
+      "language":"",
+      "provider":"aws"
+   },
+   "result":{
+      "labels":[
+         {
+            "confidence":99.93255,
+            "instances":[
+               
+            ],
+            "name":"Transportation",
+            "parents":[
+               
+            ]
+         },
+         {
+            "confidence":99.93255,
+            "instances":[
+               {
+                  "boundingBox":{
+                     "height":0.26746246,
+                     "left":0.2435077,
+                     "top":0.7304542,
+                     "width":0.43250093
+                  },
+                  "confidence":99.93255
+               },
+               {
+                  "boundingBox":{
+                     "height":0.20392673,
+                     "left":0.64362967,
+                     "top":0.69532245,
+                     "width":0.23975754
+                  },
+                  "confidence":99.69274
+               },
+               {
+                  "boundingBox":{
+                     "height":0.11905708,
+                     "left":0.91752166,
+                     "top":0.60079324,
+                     "width":0.08082161
+                  },
+                  "confidence":99.64808
+               }
+            ],
+            "name":"Car",
+            "parents":[
+               {
+                  "name":"Vehicle"
+               },
+               {
+                  "name":"Transportation"
+               }
+            ]
+         },
+         {
+            "confidence":99.93255,
+            "instances":[
+               
+            ],
+            "name":"Automobile",
+            "parents":[
+               {
+                  "name":"Vehicle"
+               },
+               {
+                  "name":"Transportation"
+               }
+            ]
+         },
+         {
+            "confidence":99.93255,
+            "instances":[
+               
+            ],
+            "name":"Vehicle",
+            "parents":[
+               {
+                  "name":"Transportation"
+               }
+            ]
+         },
+         {
+            "confidence":99.66535,
+            "instances":[
+               
+            ],
+            "name":"Human",
+            "parents":[
+               
+            ]
+         },
+         {
+            "confidence":99.66535,
+            "instances":[
+               {
+                  "boundingBox":{
+                     "height":0.25602785,
+                     "left":0.19563706,
+                     "top":0.71866006,
+                     "width":0.074756525
+                  },
+                  "confidence":99.66535
+               },
+               {
+                  "boundingBox":{
+                     "height":0.2606125,
+                     "left":0.16511679,
+                     "top":0.70453167,
+                     "width":0.057169415
+                  },
+                  "confidence":98.798164
+               },
+               {
+                  "boundingBox":{
+                     "height":0.08052279,
+                     "left":0.9173708,
+                     "top":0.5655817,
+                     "width":0.022436142
+                  },
+                  "confidence":86.93286
+               },
+               {
+                  "boundingBox":{
+                     "height":0.09262364,
+                     "left":0.44430676,
+                     "top":0.66099834,
+                     "width":0.033827115
+                  },
+                  "confidence":48.962578
+               }
+            ],
+            "name":"Person",
+            "parents":[
+               
+            ]
+         },
+         {
+            "confidence":97.96712,
+            "instances":[
+               {
+                  "boundingBox":{
+                     "height":0.086164854,
+                     "left":0.75191283,
+                     "top":0.8163411,
+                     "width":0.04245138
+                  },
+                  "confidence":97.96712
+               },
+               {
+                  "boundingBox":{
+                     "height":0.076943204,
+                     "left":0.84725034,
+                     "top":0.76657265,
+                     "width":0.029026221
+                  },
+                  "confidence":62.06658
+               }
+            ],
+            "name":"Wheel",
+            "parents":[
+               {
+                  "name":"Machine"
+               }
+            ]
+         },
+         {
+            "confidence":97.96712,
+            "instances":[
+               
+            ],
+            "name":"Machine",
+            "parents":[
+               
+            ]
+         },
+         {
+            "confidence":88.32316,
+            "instances":[
+               
+            ],
+            "name":"Urban",
+            "parents":[
+               
+            ]
+         },
+         {
+            "confidence":88.32316,
+            "instances":[
+               
+            ],
+            "name":"Building",
+            "parents":[
+               
+            ]
+         },
+         {
+            "confidence":88.32316,
+            "instances":[
+               
+            ],
+            "name":"Neighborhood",
+            "parents":[
+               {
+                  "name":"Urban"
+               },
+               {
+                  "name":"Building"
+               }
+            ]
+         },
+         {
+            "confidence":80.73974,
+            "instances":[
+               
+            ],
+            "name":"Canopy",
+            "parents":[
+               
+            ]
+         },
+         {
+            "confidence":80.73974,
+            "instances":[
+               
+            ],
+            "name":"Awning",
+            "parents":[
+               {
+                  "name":"Canopy"
+               }
+            ]
+         },
+         {
+            "confidence":76.45942,
+            "instances":[
+               
+            ],
+            "name":"Road",
+            "parents":[
+               
+            ]
+         },
+         {
+            "confidence":60.37967,
+            "instances":[
+               
+            ],
+            "name":"Path",
+            "parents":[
+               
+            ]
+         },
+         {
+            "confidence":60.273117,
+            "instances":[
+               
+            ],
+            "name":"Town",
+            "parents":[
+               {
+                  "name":"Urban"
+               },
+               {
+                  "name":"Building"
+               }
+            ]
+         },
+         {
+            "confidence":60.273117,
+            "instances":[
+               
+            ],
+            "name":"City",
+            "parents":[
+               {
+                  "name":"Urban"
+               },
+               {
+                  "name":"Building"
+               }
+            ]
+         },
+         {
+            "confidence":57.69777,
+            "instances":[
+               
+            ],
+            "name":"Shop",
+            "parents":[
+               
+            ]
+         },
+         {
+            "confidence":56.987423,
+            "instances":[
+               
+            ],
+            "name":"Pedestrian",
+            "parents":[
+               {
+                  "name":"Person"
+               }
+            ]
+         }
+      ]
+   }
+}
+```
+
+> Example response when provider is `azure`:
+
+```json
+{
+   "meta":{
+      "language":"",
+      "provider":"azure"
+   },
+   "result":{
+      "metadata":{
+         "format":"Png",
+         "height":480,
+         "width":640
+      },
+      "objects":[
+         {
+            "confidence":0.597,
+            "object":"car",
+            "parent":{
+               "confidence":0.618,
+               "object":"Land vehicle",
+               "parent":{
+                  "confidence":0.618,
+                  "object":"Vehicle"
+               }
+            },
+            "rectangle":{
+               "h":51,
+               "w":45,
+               "x":591,
+               "y":289
+            }
+         },
+         {
+            "confidence":0.824,
+            "object":"car",
+            "parent":{
+               "confidence":0.853,
+               "object":"Land vehicle",
+               "parent":{
+                  "confidence":0.853,
+                  "object":"Vehicle"
+               }
+            },
+            "rectangle":{
+               "h":96,
+               "w":162,
+               "x":411,
+               "y":337
+            }
+         },
+         {
+            "confidence":0.858,
+            "object":"car",
+            "parent":{
+               "confidence":0.884,
+               "object":"Land vehicle",
+               "parent":{
+                  "confidence":0.884,
+                  "object":"Vehicle"
+               }
+            },
+            "rectangle":{
+               "h":124,
+               "w":263,
+               "x":163,
+               "y":356
+            }
+         }
+      ]
+   }
+}
+
+```
+
+### Request Parameters
+
+Parameter | Default | Description 
+--------- | --------| -----------
+Provider | `auto` | The AI service provider you want to use. The AI Service provider can be any of the following: <ul><li>`aws` (Amazon Rekognition)</li><li>`azure` (Microsoft Azure Cognitive Services)</li><li>`gcp` (Google Cloud Vision API)</li><li>`auto` (let RAPYD.AI choose service provider automatically.)</li></ul>
+
+
 ### File Properties
 
 The request sends a file over HTTPS. 
@@ -1211,6 +1755,595 @@ result <- content(response, "parsed")
     ]
 }
 ```
+
+> Example response when provider is `aws`
+
+```json
+{
+   "meta":{
+      "language":"",
+      "provider":"aws"
+   },
+   "result":{
+      "textDetections":[
+         {
+            "confidence":99.96048,
+            "detectedText":"SCHOOL",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.059901997,
+                  "left":0.41503906,
+                  "top":0.3580729,
+                  "width":0.20507498
+               },
+               "polygon":[
+                  {
+                     "x":0.41503906,
+                     "y":0.3580729
+                  },
+                  {
+                     "x":0.620114,
+                     "y":0.35616863
+                  },
+                  {
+                     "x":0.62042695,
+                     "y":0.4160706
+                  },
+                  {
+                     "x":0.41535196,
+                     "y":0.41797492
+                  }
+               ]
+            },
+            "id":0,
+            "parentId":"None",
+            "type":"LINE"
+         },
+         {
+            "confidence":99.98234,
+            "detectedText":"SPEED",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.057378843,
+                  "left":0.421665,
+                  "top":0.47647533,
+                  "width":0.1875003
+               },
+               "polygon":[
+                  {
+                     "x":0.421665,
+                     "y":0.47647533
+                  },
+                  {
+                     "x":0.6091653,
+                     "y":0.47525543
+                  },
+                  {
+                     "x":0.6093753,
+                     "y":0.53263426
+                  },
+                  {
+                     "x":0.421875,
+                     "y":0.5338542
+                  }
+               ]
+            },
+            "id":1,
+            "parentId":"None",
+            "type":"LINE"
+         },
+         {
+            "confidence":99.986595,
+            "detectedText":"LIMIT",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.057398427,
+                  "left":0.43525207,
+                  "top":0.5533881,
+                  "width":0.15459111
+               },
+               "polygon":[
+                  {
+                     "x":0.43525207,
+                     "y":0.5533881
+                  },
+                  {
+                     "x":0.5898432,
+                     "y":0.5519739
+                  },
+                  {
+                     "x":0.59013855,
+                     "y":0.6093723
+                  },
+                  {
+                     "x":0.43554744,
+                     "y":0.61078656
+                  }
+               ]
+            },
+            "id":2,
+            "parentId":"None",
+            "type":"LINE"
+         },
+         {
+            "confidence":99.89751,
+            "detectedText":"25",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.13938081,
+                  "left":0.41544846,
+                  "top":0.6276083,
+                  "width":0.18847631
+               },
+               "polygon":[
+                  {
+                     "x":0.41544846,
+                     "y":0.6276083
+                  },
+                  {
+                     "x":0.60392475,
+                     "y":0.6262442
+                  },
+                  {
+                     "x":0.6044922,
+                     "y":0.765625
+                  },
+                  {
+                     "x":0.41601586,
+                     "y":0.7669891
+                  }
+               ]
+            },
+            "id":3,
+            "parentId":"None",
+            "type":"LINE"
+         },
+         {
+            "confidence":99.82379,
+            "detectedText":"WHEN",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.03125,
+                  "left":0.47070312,
+                  "top":0.79817706,
+                  "width":0.076171875
+               },
+               "polygon":[
+                  {
+                     "x":0.47070312,
+                     "y":0.79817706
+                  },
+                  {
+                     "x":0.546875,
+                     "y":0.79817706
+                  },
+                  {
+                     "x":0.546875,
+                     "y":0.82942706
+                  },
+                  {
+                     "x":0.47070312,
+                     "y":0.82942706
+                  }
+               ]
+            },
+            "id":4,
+            "parentId":"None",
+            "type":"LINE"
+         },
+         {
+            "confidence":99.91038,
+            "detectedText":"CHILDREN",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.031289447,
+                  "left":0.44122976,
+                  "top":0.8333351,
+                  "width":0.13396531
+               },
+               "polygon":[
+                  {
+                     "x":0.44122976,
+                     "y":0.8333351
+                  },
+                  {
+                     "x":0.5751951,
+                     "y":0.83199
+                  },
+                  {
+                     "x":0.5753718,
+                     "y":0.86327946
+                  },
+                  {
+                     "x":0.4414065,
+                     "y":0.86462456
+                  }
+               ]
+            },
+            "id":5,
+            "parentId":"None",
+            "type":"LINE"
+         },
+         {
+            "confidence":99.85474,
+            "detectedText":"ARE PRESENT",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.032753557,
+                  "left":0.4082035,
+                  "top":0.8643817,
+                  "width":0.19635078
+               },
+               "polygon":[
+                  {
+                     "x":0.4082035,
+                     "y":0.8643817
+                  },
+                  {
+                     "x":0.6045543,
+                     "y":0.8650575
+                  },
+                  {
+                     "x":0.6044909,
+                     "y":0.89781106
+                  },
+                  {
+                     "x":0.4081401,
+                     "y":0.8971352
+                  }
+               ]
+            },
+            "id":6,
+            "parentId":"None",
+            "type":"LINE"
+         },
+         {
+            "confidence":99.96048,
+            "detectedText":"SCHOOL",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.05859375,
+                  "left":0.41503906,
+                  "top":0.3580729,
+                  "width":0.20508225
+               },
+               "polygon":[
+                  {
+                     "x":0.41503906,
+                     "y":0.3580729
+                  },
+                  {
+                     "x":0.6201172,
+                     "y":0.35677084
+                  },
+                  {
+                     "x":0.6201172,
+                     "y":0.4153646
+                  },
+                  {
+                     "x":0.41601562,
+                     "y":0.41796875
+                  }
+               ]
+            },
+            "id":7,
+            "parentId":0,
+            "type":"WORD"
+         },
+         {
+            "confidence":99.98234,
+            "detectedText":"SPEED",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.05729999,
+                  "left":0.421875,
+                  "top":0.4765625,
+                  "width":0.18652798
+               },
+               "polygon":[
+                  {
+                     "x":0.421875,
+                     "y":0.4765625
+                  },
+                  {
+                     "x":0.60839844,
+                     "y":0.4752604
+                  },
+                  {
+                     "x":0.609375,
+                     "y":0.53255206
+                  },
+                  {
+                     "x":0.421875,
+                     "y":0.5338542
+                  }
+               ]
+            },
+            "id":8,
+            "parentId":1,
+            "type":"WORD"
+         },
+         {
+            "confidence":99.986595,
+            "detectedText":"LIMIT",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.057291668,
+                  "left":0.43554688,
+                  "top":0.55338544,
+                  "width":0.15430237
+               },
+               "polygon":[
+                  {
+                     "x":0.43554688,
+                     "y":0.55338544
+                  },
+                  {
+                     "x":0.58984375,
+                     "y":0.5520833
+                  },
+                  {
+                     "x":0.58984375,
+                     "y":0.609375
+                  },
+                  {
+                     "x":0.43554688,
+                     "y":0.61067706
+                  }
+               ]
+            },
+            "id":9,
+            "parentId":2,
+            "type":"WORD"
+         },
+         {
+            "confidence":99.89751,
+            "detectedText":"25",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.13932633,
+                  "left":0.41601562,
+                  "top":0.6276042,
+                  "width":0.18750452
+               },
+               "polygon":[
+                  {
+                     "x":0.41601562,
+                     "y":0.6276042
+                  },
+                  {
+                     "x":0.6035156,
+                     "y":0.62630206
+                  },
+                  {
+                     "x":0.6044922,
+                     "y":0.765625
+                  },
+                  {
+                     "x":0.41601562,
+                     "y":0.76692706
+                  }
+               ]
+            },
+            "id":10,
+            "parentId":3,
+            "type":"WORD"
+         },
+         {
+            "confidence":99.82379,
+            "detectedText":"WHEN",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.03125,
+                  "left":0.47070312,
+                  "top":0.79817706,
+                  "width":0.076171875
+               },
+               "polygon":[
+                  {
+                     "x":0.47070312,
+                     "y":0.79817706
+                  },
+                  {
+                     "x":0.546875,
+                     "y":0.79817706
+                  },
+                  {
+                     "x":0.546875,
+                     "y":0.82942706
+                  },
+                  {
+                     "x":0.47070312,
+                     "y":0.82942706
+                  }
+               ]
+            },
+            "id":11,
+            "parentId":4,
+            "type":"WORD"
+         },
+         {
+            "confidence":99.91038,
+            "detectedText":"CHILDREN",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.03125,
+                  "left":0.44140625,
+                  "top":0.8333333,
+                  "width":0.1337954
+               },
+               "polygon":[
+                  {
+                     "x":0.44140625,
+                     "y":0.8333333
+                  },
+                  {
+                     "x":0.5751953,
+                     "y":0.83203125
+                  },
+                  {
+                     "x":0.5751953,
+                     "y":0.86328125
+                  },
+                  {
+                     "x":0.44140625,
+                     "y":0.8645833
+                  }
+               ]
+            },
+            "id":12,
+            "parentId":5,
+            "type":"WORD"
+         },
+         {
+            "confidence":99.773544,
+            "detectedText":"ARE",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.032552082,
+                  "left":0.40820312,
+                  "top":0.8645833,
+                  "width":0.05859375
+               },
+               "polygon":[
+                  {
+                     "x":0.40820312,
+                     "y":0.8645833
+                  },
+                  {
+                     "x":0.46679688,
+                     "y":0.8645833
+                  },
+                  {
+                     "x":0.46679688,
+                     "y":0.89713544
+                  },
+                  {
+                     "x":0.40820312,
+                     "y":0.89713544
+                  }
+               ]
+            },
+            "id":13,
+            "parentId":6,
+            "type":"WORD"
+         },
+         {
+            "confidence":99.93593,
+            "detectedText":"PRESENT",
+            "geometry":{
+               "boundingBox":{
+                  "height":0.03125,
+                  "left":0.48046875,
+                  "top":0.86588544,
+                  "width":0.12402344
+               },
+               "polygon":[
+                  {
+                     "x":0.48046875,
+                     "y":0.86588544
+                  },
+                  {
+                     "x":0.6044922,
+                     "y":0.86588544
+                  },
+                  {
+                     "x":0.6044922,
+                     "y":0.89713544
+                  },
+                  {
+                     "x":0.48046875,
+                     "y":0.89713544
+                  }
+               ]
+            },
+            "id":14,
+            "parentId":6,
+            "type":"WORD"
+         }
+      ]
+   }
+}
+```
+
+> Example response when provider is `azure`
+
+```json
+{
+   "meta":{
+      "language":"",
+      "provider":"azure"
+   },
+   "result":{
+      "language":"en",
+      "orientation":"Up",
+      "regions":[
+         {
+            "boundingBox":"423,276,212,415",
+            "lines":[
+               {
+                  "boundingBox":"430,276,205,44",
+                  "words":[
+                     {
+                        "boundingBox":"430,276,205,44",
+                        "text":"SCHOOL"
+                     }
+                  ]
+               },
+               {
+                  "boundingBox":"436,370,189,40",
+                  "words":[
+                     {
+                        "boundingBox":"436,370,189,40",
+                        "text":"SPEED"
+                     }
+                  ]
+               },
+               {
+                  "boundingBox":"487,618,71,21",
+                  "words":[
+                     {
+                        "boundingBox":"487,618,71,21",
+                        "text":"WHEN"
+                     }
+                  ]
+               },
+               {
+                  "boundingBox":"457,643,131,22",
+                  "words":[
+                     {
+                        "boundingBox":"457,643,131,22",
+                        "text":"CHILDREN"
+                     }
+                  ]
+               },
+               {
+                  "boundingBox":"423,669,197,22",
+                  "words":[
+                     {
+                        "boundingBox":"423,669,54,21",
+                        "text":"ARE"
+                     },
+                     {
+                        "boundingBox":"497,669,123,22",
+                        "text":"PRESENT"
+                     }
+                  ]
+               }
+            ]
+         }
+      ],
+      "textAngle":0.0
+   }
+}
+```
+
+### Request Parameters
+
+Parameter | Default | Description 
+--------- | --------| -----------
+Provider | `auto` | The AI service provider you want to use. The AI Service provider can be any of the following: <ul><li>`aws` (Amazon Rekognition)</li><li>`azure` (Microsoft Azure Cognitive Services)</li><li>`gcp` (Google Cloud Vision API)</li><li>`auto` (let RAPYD.AI choose service provider automatically.)</li></ul>
+
 
 ### File Properties
 

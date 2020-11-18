@@ -190,7 +190,7 @@ The request body contains data in JSON representation:
 
 Parameter | Default | Description 
 --------- | --------| -----------
-Text | None | The text which you want to analyse. Maximum is xxxx characters.
+Text | None | The text which you want to analyse. Maximum is 4.000 characters.
 Provider | `auto` | The AI service provider you want to use. The AI Service provider can be any of the following: <ul><li>`aws` (Amazon Comprehend)</li><li>`azure` (Microsoft Azure Cognitive Services)</li><li>`gcp` (Google Cloud NLP API).</li><li>`auto` (let RAPYD.AI choose service provider automatically.)</li></ul>
 Language | `auto` | The language of the text in the request body. Can be any of the following: <ul><li>`de` (German) </li><li>`en` (English) </li><li>`es` (Spanish) </li><li>`it` (Italian) </li><li>`pt` (Portuguese) </li><li>`fr` (French) </li><li>`ja` (Japanese) </li><li>`ko` (Korean) </li><li>`hi` (Hindi) </li><li>`ar` (Arabic) </li><li>`zh` (Chinese simplified) </li><li>`zh-TW` (Chinese traditional) </li><li>`auto` (Auto-detect language) </li></ul>
 
@@ -410,7 +410,7 @@ The request body contains data in JSON representation.
 
 Parameter | Default | Description 
 --------- | --------| -----------
-Text | None | The text which you want to analyse. Maximum is xxxx characters.
+Text | None | The text which you want to analyse. Maximum is 4.000 characters.
 Provider | `auto` | The AI service provider you want to use. The AI Service provider can be any of the following: <ul><li>`aws` (Amazon Comprehend)</li><li>`azure` (Microsoft Azure Cognitive Services)</li><li>`gcp` (Google Cloud NLP API).</li><li>`auto` (let RAPYD.AI choose service provider automatically.)</li></ul>
 Language | `auto` | The language of the text in the request body. Can be any of the following: <ul><li>`de` (German) </li><li>`en` (English) </li><li>`es` (Spanish) </li><li>`it` (Italian) </li><li>`pt` (Portuguese) </li><li>`fr` (French) </li><li>`ja` (Japanese) </li><li>`ko` (Korean) </li><li>`hi` (Hindi) </li><li>`ar` (Arabic) </li><li>`zh` (Chinese simplified) </li><li>`zh-TW` (Chinese traditional) </li><li>`auto` (Auto-detect language) </li></ul>
 
@@ -575,6 +575,6 @@ The request body contains data in JSON representation.
 
 Parameter | Default | Description 
 --------- | --------| -----------
-Text | None | The text which you want to analyse. Maximum is xxxx characters.
+Text | None | The text which you want to analyse. Maximum is 4.000 characters.
 Provider | `auto` | The AI service provider you want to use. The AI Service provider can be any of the following: <ul><li>`aws` (Amazon Comprehend)</li><li>`azure` (Microsoft Azure Cognitive Services)</li><li>`auto` (let RAPYD.AI choose service provider automatically.)</li></ul>
 Language | `auto` | The language of the text in the request body. Can be any of the following: <ul><li>`de` (German) </li><li>`en` (English) </li><li>`es` (Spanish) </li><li>`it` (Italian) </li><li>`pt` (Portuguese) </li><li>`fr` (French) </li><li>`ja` (Japanese) </li><li>`ko` (Korean) </li><li>`hi` (Hindi) </li><li>`ar` (Arabic) </li><li>`zh` (Chinese simplified) </li><li>`zh-TW` (Chinese traditional) </li><li>`auto` (Auto-detect language) </li></ul>
