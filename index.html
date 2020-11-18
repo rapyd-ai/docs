@@ -671,7 +671,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 <tr>
 <td>Text</td>
 <td>None</td>
-<td>The text which you want to analyse. Maximum is xxxx characters.</td>
+<td>The text which you want to analyse. Maximum is 4.000 characters.</td>
 </tr>
 <tr>
 <td>Provider</td>
@@ -886,7 +886,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 <tr>
 <td>Text</td>
 <td>None</td>
-<td>The text which you want to analyse. Maximum is xxxx characters.</td>
+<td>The text which you want to analyse. Maximum is 4.000 characters.</td>
 </tr>
 <tr>
 <td>Provider</td>
@@ -1046,7 +1046,7 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 <tr>
 <td>Text</td>
 <td>None</td>
-<td>The text which you want to analyse. Maximum is xxxx characters.</td>
+<td>The text which you want to analyse. Maximum is 4.000 characters.</td>
 </tr>
 <tr>
 <td>Provider</td>
@@ -1061,8 +1061,6 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
 </tbody></table>
 <h1 id='computer-vision'>Computer Vision</h1>
 <p>Computer Vision enables machines to &quot;see&quot; images and recognize objects, entities and texts or extract meta information from a given image.</p>
-
-<p>Currently, the Computer Vision AI services are only available through the provider Google Cloud Platform (<code>gcp</code>). More providers will follow soon.</p>
 <h2 id='face-detection'>Face Detection</h2>
 <p>Face detection identifies faces on images and analyses various characteristics such as the face expression or facial features like eyes, nose or mouth positions.</p>
 
@@ -1422,7 +1420,115 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='file-properties'>File Properties</h3>
+</span></code></pre></div>
+<blockquote>
+<p>Example response when provider is <code>aws</code></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"meta"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"language"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"provider"</span><span class="p">:</span><span class="s2">"aws"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"result"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"faceDetails"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"ageRange"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"beard"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.26589525</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.37521443</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.06623106</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.2295874</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.99913</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"emotions"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"eyeglasses"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"eyesOpen"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"gender"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"landmarks"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"eyeLeft"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.44272083</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.17161196</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"eyeRight"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.5494187</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.17190441</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"mouthLeft"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.4502387</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.2601221</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"mouthRight"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.5393077</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.26036945</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"nose"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.49708697</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.2186894</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"mouthOpen"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"mustache"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pose"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"pitch"</span><span class="p">:</span><span class="mf">3.009071</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"roll"</span><span class="p">:</span><span class="mf">-0.5177236</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"yaw"</span><span class="p">:</span><span class="mf">1.9940312</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"quality"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"brightness"</span><span class="p">:</span><span class="mf">90.198135</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"sharpness"</span><span class="p">:</span><span class="mf">95.51619</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"smile"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sunglasses"</span><span class="p">:</span><span class="s2">"None"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"orientationCorrection"</span><span class="p">:</span><span class="s2">"None"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response when provider is <code>azure</code></p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{
+   "meta":{
+      "language":"",
+      "provider":"azure"
+   },
+   "result":{
+      "faces":[
+         {
+            "age":57,
+            "faceRectangle":{
+               "height":252,
+               "left":382,
+               "top":146,
+               "width":252
+            },
+            "gender":"Male"
+         }
+      ]
+   }
+}
+</code></pre></div><h3 id='request-parameters'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Provider</td>
+<td><code>auto</code></td>
+<td>The AI service provider you want to use. The AI Service provider can be any of the following: <ul><li><code>aws</code> (Amazon Rekognition)</li><li><code>azure</code> (Microsoft Azure Cognitive Services)</li><li><code>gcp</code> (Google Cloud Vision API)</li><li><code>auto</code> (let RAPYD.AI choose service provider automatically.)</li></ul></td>
+</tr>
+</tbody></table>
+<h3 id='file-properties'>File Properties</h3>
 <p>The request sends a file over HTTPS. </p>
 
 <table><thead>
@@ -1573,7 +1679,59 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='file-properties-2'>File Properties</h3>
+</span></code></pre></div>
+<blockquote>
+<p>Example response when provider is <code>azure</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"meta"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"language"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"provider"</span><span class="p">:</span><span class="s2">"azure"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"result"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"categories"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"detail"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"landmarks"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">0.9999419450759888</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Eiffel Tower"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"building_"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"score"</span><span class="p">:</span><span class="mf">0.3671875</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"detail"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"landmarks"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">0.9999419450759888</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Eiffel Tower"</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"building_church"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"score"</span><span class="p">:</span><span class="mf">0.609375</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='request-parameters-2'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Provider</td>
+<td><code>auto</code></td>
+<td>The AI service provider you want to use. The AI Service provider can be any of the following: <ul><li><code>azure</code> (Microsoft Azure Cognitive Services)</li><li><code>gcp</code> (Google Cloud Vision API)</li><li><code>auto</code> (let RAPYD.AI choose service provider automatically.)</li></ul></td>
+</tr>
+</tbody></table>
+<h3 id='file-properties-2'>File Properties</h3>
 <p>The request sends a file over HTTPS. </p>
 
 <table><thead>
@@ -1915,7 +2073,410 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='file-properties-3'>File Properties</h3>
+</span></code></pre></div>
+<blockquote>
+<p>Example response when provider is <code>aws</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"meta"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"language"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"provider"</span><span class="p">:</span><span class="s2">"aws"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"result"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"labels"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.93255</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Transportation"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.93255</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                     </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.26746246</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.2435077</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.7304542</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.43250093</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.93255</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                     </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.20392673</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.64362967</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.69532245</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.23975754</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.69274</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                     </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.11905708</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.91752166</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.60079324</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.08082161</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.64808</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Car"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Vehicle"</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Transportation"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.93255</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Automobile"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Vehicle"</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Transportation"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.93255</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Vehicle"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Transportation"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.66535</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Human"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.66535</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                     </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.25602785</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.19563706</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.71866006</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.074756525</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.66535</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                     </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.2606125</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.16511679</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.70453167</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.057169415</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">98.798164</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                     </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.08052279</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.9173708</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.5655817</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.022436142</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">86.93286</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                     </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.09262364</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.44430676</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.66099834</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.033827115</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">48.962578</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Person"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">97.96712</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                     </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.086164854</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.75191283</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.8163411</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.04245138</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">97.96712</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                     </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.076943204</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.84725034</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.76657265</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.029026221</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">62.06658</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Wheel"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Machine"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">97.96712</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Machine"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">88.32316</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Urban"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">88.32316</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Building"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">88.32316</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Neighborhood"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Urban"</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Building"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">80.73974</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Canopy"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">80.73974</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Awning"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Canopy"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">76.45942</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Road"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">60.37967</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Path"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">60.273117</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Town"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Urban"</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Building"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">60.273117</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"City"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Urban"</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Building"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">57.69777</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Shop"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">56.987423</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"instances"</span><span class="p">:[</span><span class="w">
+
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Pedestrian"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parents"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Person"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response when provider is <code>azure</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"meta"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"language"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"provider"</span><span class="p">:</span><span class="s2">"azure"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"result"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"metadata"</span><span class="p">:{</span><span class="w">
+         </span><span class="nl">"format"</span><span class="p">:</span><span class="s2">"Png"</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"height"</span><span class="p">:</span><span class="mi">480</span><span class="p">,</span><span class="w">
+         </span><span class="nl">"width"</span><span class="p">:</span><span class="mi">640</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"objects"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">0.597</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"object"</span><span class="p">:</span><span class="s2">"car"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parent"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">0.618</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"object"</span><span class="p">:</span><span class="s2">"Land vehicle"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"parent"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">0.618</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"object"</span><span class="p">:</span><span class="s2">"Vehicle"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"rectangle"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"h"</span><span class="p">:</span><span class="mi">51</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"w"</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"x"</span><span class="p">:</span><span class="mi">591</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"y"</span><span class="p">:</span><span class="mi">289</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">0.824</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"object"</span><span class="p">:</span><span class="s2">"car"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parent"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">0.853</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"object"</span><span class="p">:</span><span class="s2">"Land vehicle"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"parent"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">0.853</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"object"</span><span class="p">:</span><span class="s2">"Vehicle"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"rectangle"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"h"</span><span class="p">:</span><span class="mi">96</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"w"</span><span class="p">:</span><span class="mi">162</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"x"</span><span class="p">:</span><span class="mi">411</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"y"</span><span class="p">:</span><span class="mi">337</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">0.858</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"object"</span><span class="p">:</span><span class="s2">"car"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parent"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">0.884</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"object"</span><span class="p">:</span><span class="s2">"Land vehicle"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"parent"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">0.884</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"object"</span><span class="p">:</span><span class="s2">"Vehicle"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"rectangle"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"h"</span><span class="p">:</span><span class="mi">124</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"w"</span><span class="p">:</span><span class="mi">263</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"x"</span><span class="p">:</span><span class="mi">163</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"y"</span><span class="p">:</span><span class="mi">356</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='request-parameters-3'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Provider</td>
+<td><code>auto</code></td>
+<td>The AI service provider you want to use. The AI Service provider can be any of the following: <ul><li><code>aws</code> (Amazon Rekognition)</li><li><code>azure</code> (Microsoft Azure Cognitive Services)</li><li><code>gcp</code> (Google Cloud Vision API)</li><li><code>auto</code> (let RAPYD.AI choose service provider automatically.)</li></ul></td>
+</tr>
+</tbody></table>
+<h3 id='file-properties-3'>File Properties</h3>
 <p>The request sends a file over HTTPS. </p>
 
 <table><thead>
@@ -2227,7 +2788,601 @@ curl <span class="nt">--location</span> <span class="nt">--request</span> POST <
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='file-properties-4'>File Properties</h3>
+</span></code></pre></div>
+<blockquote>
+<p>Example response when provider is <code>aws</code></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"meta"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"language"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"provider"</span><span class="p">:</span><span class="s2">"aws"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"result"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"textDetections"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.96048</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"SCHOOL"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.059901997</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.41503906</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.3580729</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.20507498</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.41503906</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.3580729</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.620114</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.35616863</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.62042695</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.4160706</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.41535196</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.41797492</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"LINE"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.98234</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"SPEED"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.057378843</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.421665</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.47647533</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.1875003</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.421665</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.47647533</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.6091653</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.47525543</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.6093753</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.53263426</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.421875</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.5338542</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"LINE"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.986595</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"LIMIT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.057398427</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.43525207</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.5533881</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.15459111</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.43525207</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.5533881</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.5898432</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.5519739</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.59013855</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.6093723</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.43554744</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.61078656</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"LINE"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.89751</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"25"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.13938081</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.41544846</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.6276083</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.18847631</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.41544846</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.6276083</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.60392475</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.6262442</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.6044922</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.765625</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.41601586</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.7669891</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"LINE"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.82379</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"WHEN"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.03125</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.47070312</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.79817706</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.076171875</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.47070312</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.79817706</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.546875</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.79817706</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.546875</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.82942706</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.47070312</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.82942706</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"LINE"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.91038</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"CHILDREN"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.031289447</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.44122976</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.8333351</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.13396531</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.44122976</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.8333351</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.5751951</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.83199</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.5753718</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.86327946</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.4414065</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.86462456</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"LINE"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.85474</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"ARE PRESENT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.032753557</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.4082035</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.8643817</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.19635078</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.4082035</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.8643817</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.6045543</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.8650575</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.6044909</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.89781106</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.4081401</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.8971352</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"LINE"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.96048</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"SCHOOL"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.05859375</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.41503906</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.3580729</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.20508225</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.41503906</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.3580729</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.6201172</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.35677084</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.6201172</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.4153646</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.41601562</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.41796875</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"WORD"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.98234</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"SPEED"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.05729999</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.421875</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.4765625</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.18652798</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.421875</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.4765625</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.60839844</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.4752604</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.609375</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.53255206</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.421875</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.5338542</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"WORD"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.986595</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"LIMIT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.057291668</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.43554688</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.55338544</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.15430237</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.43554688</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.55338544</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.58984375</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.5520833</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.58984375</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.609375</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.43554688</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.61067706</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"WORD"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.89751</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"25"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.13932633</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.41601562</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.6276042</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.18750452</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.41601562</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.6276042</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.6035156</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.62630206</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.6044922</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.765625</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.41601562</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.76692706</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"WORD"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.82379</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"WHEN"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.03125</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.47070312</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.79817706</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.076171875</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.47070312</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.79817706</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.546875</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.79817706</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.546875</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.82942706</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.47070312</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.82942706</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"WORD"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.91038</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"CHILDREN"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.03125</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.44140625</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.8333333</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.1337954</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.44140625</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.8333333</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.5751953</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.83203125</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.5751953</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.86328125</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.44140625</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.8645833</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"WORD"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.773544</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"ARE"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.032552082</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.40820312</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.8645833</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.05859375</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.40820312</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.8645833</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.46679688</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.8645833</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.46679688</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.89713544</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.40820312</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.89713544</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"WORD"</span><span class="w">
+         </span><span class="p">},</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"confidence"</span><span class="p">:</span><span class="mf">99.93593</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"detectedText"</span><span class="p">:</span><span class="s2">"PRESENT"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"geometry"</span><span class="p">:{</span><span class="w">
+               </span><span class="nl">"boundingBox"</span><span class="p">:{</span><span class="w">
+                  </span><span class="nl">"height"</span><span class="p">:</span><span class="mf">0.03125</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"left"</span><span class="p">:</span><span class="mf">0.48046875</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"top"</span><span class="p">:</span><span class="mf">0.86588544</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"width"</span><span class="p">:</span><span class="mf">0.12402344</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="nl">"polygon"</span><span class="p">:[</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.48046875</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.86588544</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.6044922</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.86588544</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.6044922</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.89713544</span><span class="w">
+                  </span><span class="p">},</span><span class="w">
+                  </span><span class="p">{</span><span class="w">
+                     </span><span class="nl">"x"</span><span class="p">:</span><span class="mf">0.48046875</span><span class="p">,</span><span class="w">
+                     </span><span class="nl">"y"</span><span class="p">:</span><span class="mf">0.89713544</span><span class="w">
+                  </span><span class="p">}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"parentId"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"WORD"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response when provider is <code>azure</code></p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"meta"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"language"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"provider"</span><span class="p">:</span><span class="s2">"azure"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"result"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"language"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orientation"</span><span class="p">:</span><span class="s2">"Up"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"regions"</span><span class="p">:[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"boundingBox"</span><span class="p">:</span><span class="s2">"423,276,212,415"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lines"</span><span class="p">:[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"boundingBox"</span><span class="p">:</span><span class="s2">"430,276,205,44"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"words"</span><span class="p">:[</span><span class="w">
+                     </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"boundingBox"</span><span class="p">:</span><span class="s2">"430,276,205,44"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"text"</span><span class="p">:</span><span class="s2">"SCHOOL"</span><span class="w">
+                     </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"boundingBox"</span><span class="p">:</span><span class="s2">"436,370,189,40"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"words"</span><span class="p">:[</span><span class="w">
+                     </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"boundingBox"</span><span class="p">:</span><span class="s2">"436,370,189,40"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"text"</span><span class="p">:</span><span class="s2">"SPEED"</span><span class="w">
+                     </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"boundingBox"</span><span class="p">:</span><span class="s2">"487,618,71,21"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"words"</span><span class="p">:[</span><span class="w">
+                     </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"boundingBox"</span><span class="p">:</span><span class="s2">"487,618,71,21"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"text"</span><span class="p">:</span><span class="s2">"WHEN"</span><span class="w">
+                     </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"boundingBox"</span><span class="p">:</span><span class="s2">"457,643,131,22"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"words"</span><span class="p">:[</span><span class="w">
+                     </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"boundingBox"</span><span class="p">:</span><span class="s2">"457,643,131,22"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"text"</span><span class="p">:</span><span class="s2">"CHILDREN"</span><span class="w">
+                     </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                  </span><span class="nl">"boundingBox"</span><span class="p">:</span><span class="s2">"423,669,197,22"</span><span class="p">,</span><span class="w">
+                  </span><span class="nl">"words"</span><span class="p">:[</span><span class="w">
+                     </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"boundingBox"</span><span class="p">:</span><span class="s2">"423,669,54,21"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"text"</span><span class="p">:</span><span class="s2">"ARE"</span><span class="w">
+                     </span><span class="p">},</span><span class="w">
+                     </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"boundingBox"</span><span class="p">:</span><span class="s2">"497,669,123,22"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"text"</span><span class="p">:</span><span class="s2">"PRESENT"</span><span class="w">
+                     </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"textAngle"</span><span class="p">:</span><span class="mf">0.0</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='request-parameters-4'>Request Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Provider</td>
+<td><code>auto</code></td>
+<td>The AI service provider you want to use. The AI Service provider can be any of the following: <ul><li><code>aws</code> (Amazon Rekognition)</li><li><code>azure</code> (Microsoft Azure Cognitive Services)</li><li><code>gcp</code> (Google Cloud Vision API)</li><li><code>auto</code> (let RAPYD.AI choose service provider automatically.)</li></ul></td>
+</tr>
+</tbody></table>
+<h3 id='file-properties-4'>File Properties</h3>
 <p>The request sends a file over HTTPS. </p>
 
 <table><thead>
